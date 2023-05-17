@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-color: black;
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 95vh;
+}
+
+.caixa-login {
+  width: auto;
+  padding: 50px 60px 90px 60px;
+  height: 50vh;
+  background-color: rgba(6, 205, 189, 0.79);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 66px;
+}
+
+.peixes {
+ width: 1vh;
+ height: 1vh;
+}
+
+.logoIMG {
+  margin-bottom: 30px;
+}
+
+.inputs {
+  width: 20vw;
+  padding: 0 20px 0 0;
+}
+
+input {
+    width: 100%;
+    border-radius: 66px;
+    border: 2px solid white;
+    padding: 10px 10px;
+    margin-bottom: 8px;
+    text-align: center;
+    font-weight: 500;
+}
+
+input:focus {
+  border: 2px solid rgb(4, 39, 240);
+  outline: none;
+}
+
+input::placeholder {
+  text-align: center;
+  color: black;
+  font-weight: 600;
+}
+
+.input-dobrado {
+  display: flex;
+}
+
+.input-principal {
+  margin-right: 30px;
+}
+
+button {
+  background-color: black;
+  color: white;
+  border: 2px solid black;
+  border-radius: 50px;
+  font-size: 1.3rem;
+  padding: 10px 10px;
+  width: 100%;
+  cursor: pointer;
+  margin-top: 20px;
+  font-weight: bold;
+  transition: 0.5s;
+}
+
+button:hover {
+  background-color: transparent;
+  color: black;
+}
+
+.topo {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.imgtopo {
+  width: 5px;
+  height: 5px;
+}
