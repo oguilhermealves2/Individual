@@ -10,14 +10,14 @@ var qaAnsRow = document.querySelectorAll('.qa_set .qa_ans_row input')
 
 skip.addEventListener('click', function () {
   step()
-  duration = 10
+  duration = 15
 })
 
 qaAnsRow.forEach(function(qaAnsRowSingLe) {
   qaAnsRowSingLe.addEventListener('click', function(){
   setTimeout(function(){
     step()
-    duration = 10
+    duration = 15
   }, 500)
 
   var valid = this.getAttribute("valid");
@@ -44,12 +44,12 @@ function step() {
 }
 
 var durationTime = setInterval(function(){
-  if (duration == 10) {
+  if (duration == 15) {
     duration = 0
   }
   duration +=1
   countdown.innerHTML = duration;
-  if (countdown.innerHTML == "10") {
+  if (countdown.innerHTML == "15") {
     step()
   }
 

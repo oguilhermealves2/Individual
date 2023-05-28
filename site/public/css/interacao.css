@@ -5,9 +5,59 @@ body{
   background-color: #000000;
   display: flex;
   align-items: center;
-  justify-content: space-around;
   min-height: 100vh;
+  flex-direction: column;
 }
+
+/*Começo do nav-bar*/
+
+.container {
+  background-color: #06CDBD; /*so coloquei a imagem */
+  background-image: url(../assets/logo.png);
+   background-attachment: fixed; /*Aqui ele esta fixando mesmo que role a tela */
+   background-size: cover; /*Arruma a imagem */
+   height: 12vh;
+   width: 100%;
+   }
+   
+   header {
+       display: flex;
+       align-items: center;  /*Alinhou o texto no centro (sentido y) */
+       justify-content: center; /*Separou os elementos */
+       padding: 0 30px;
+       height: 110px;
+   
+   }
+   
+   .logo {
+       width: 80%;
+   }
+   
+   /* Onde está a imagem da home */
+   .navbar-logo {
+       display: flex;
+       align-items: center;
+   }
+   
+   /*Inicio, sobre, curiosidades  */
+   .navbar {
+       width: 33.3%;
+       display: flex;
+       justify-content: space-between;
+      
+   }
+   
+   /*Quase a mesma coisa, pórem cada palavra em especifico */
+   .navbar a {
+       color: rgb(255, 255, 255);
+       font-weight: 700; /*  Peso da fonte (importada do google) */
+       font-size: 25px; /*Tamanho da fonte */
+      
+   }
+   
+  
+ /*Fim da nav-bar */
+
 .qa_box{
   width: 500px;
   padding: 20px;
@@ -15,6 +65,7 @@ body{
   background-color: #ffffff;
   box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.37);
   border-radius: 25px;
+  margin-top: 25vh;
 }
 
 .qa_header {
@@ -67,7 +118,7 @@ cursor: pointer;
 }
 
 .qa_ans_row input:checked + span{
-  background-color: #f93c3c;
+  background-color: #ff0000;
 }
 
 .qa_ans_row input[valid]:checked + span{

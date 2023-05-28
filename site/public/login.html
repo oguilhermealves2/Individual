@@ -14,6 +14,29 @@
 </head>
 
 <body>
+
+<!---Cabecario universal-->
+
+<div class="container">
+    <header>
+      <div class="navbar-logo">
+        <img class="logo" src="assets/logo3attt.png" alt="" />
+      </div>
+
+      <nav class="navbar">
+        <a href="./index.html">Início</a>
+        <a href="./index.html#Sobre">Sobre</a>
+        <a href="./index.html#Curiosidades">Curiosidades</a>
+      </nav>
+      <div class="navbar-buttons">
+        <button onclick="login()" class="one">Entrar</button>
+        <button onclick="cadastro()" class="two">Cadastre-se</button>
+      </div>
+    </header>
+  </div>
+
+<!---Fim do cabecario-->
+
     <section class="login">
         <div class="caixa-login">
             <div class="topo">
@@ -68,6 +91,10 @@
 </html>
 
 <script>
+
+    function cadastro() {
+        window.location = 'cadastro.html'
+    }
 
 
     function entrar() {
