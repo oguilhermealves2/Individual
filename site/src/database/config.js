@@ -20,7 +20,7 @@ var sqlServerConfig = {
 // CONEXÃO DO MYSQL WORKBENCH
 var mySqlConfig = {
     host: "localhost",
-    database: "individual",
+    database: "thechosen",
     user: "root",
     password: "Jcvive@1",
 };

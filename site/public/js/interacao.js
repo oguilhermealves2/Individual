@@ -1,56 +1,102 @@
-var skip = document.getElementById('skip')
-var score = document.getElementById('score')
-var totalScore = document.getElementById('totalScore')
-var countdown = document.getElementById('countdown')
-var count = 0
-var scoreCount = 0
-var duration = 0
-var qaSet = document.querySelectorAll('.qa_set')
-var qaAnsRow = document.querySelectorAll('.qa_set .qa_ans_row input')
+var proxima = document.getElementById('proxima')
+var pontuacao = document.getElementById('pontuacao')
+var totalpontuacao = document.getElementById('totalpontuacao')
+var cronometro = document.getElementById('cronometro')
+var contador = 0
+var pontuacaoContador = 0
+var duracao = 0
+var caixasP = document.querySelectorAll('.caixas_de_perguntas')
+var perg = document.querySelectorAll('.caixas_de_perguntas .perguntas input')
 
-skip.addEventListener('click', function () {
+proxima.addEventListener('click', function () {
   step()
-  duration = 15
-})
+  duracao = 15
+}) 
 
-qaAnsRow.forEach(function(qaAnsRowSingLe) {
-  qaAnsRowSingLe.addEventListener('click', function(){
+perg.forEach(function(pergOne) {
+  pergOne.addEventListener('click', function(){
   setTimeout(function(){
     step()
-    duration = 15
+    duracao = 15
   }, 500)
 
   var valid = this.getAttribute("valid");
   if(valid == "valid"){
-    scoreCount += 20;
-    score.innerHTML = scoreCount;
-    totalScore.innerHTML = scoreCount;
+    pontuacaoContador += 20;
+    errosContador = 100 - pontuacaoContador;
+    pontuacao.innerHTML = pontuacaoContador;
+    totalpontuacao.innerHTML = pontuacaoContador;
   } 
 
   })
 });
 
 function step() {
-  count += 1
-  for (var i = 0; i < qaSet.length; i++) {
-    qaSet[i].className = 'qa_set'
+  contador += 1
+  for (var i = 0; i < caixasP.length; i++) {
+    caixasP[i].className = 'caixas_de_perguntas'
   } 
-  qaSet[count].className = 'qa_set active'
-  if (count == 5) {
-    skip.style.display = 'none'
-    clearInterval(durationTime);
-    countdown.innerHTML = 0
+  caixasP[contador].className = 'caixas_de_perguntas ativar'
+  if (contador == 5) {
+    proxima.style.display = 'none'
+    clearInterval(duracaoTime);
+    cronometro.innerHTML = 0
   }
 }
 
-var durationTime = setInterval(function(){
-  if (duration == 15) {
-    duration = 0
+var duracaoTime = setInterval(function(){
+  if (duracao == 15) {
+    duracao = 0
   }
-  duration +=1
-  countdown.innerHTML = duration;
-  if (countdown.innerHTML == "15") {
+  duracao +=1
+  cronometro.innerHTML = duracao;
+  if (cronometro.innerHTML == "15") {
     step()
   }
 
 }, 1000)
+
+
+if((errosContador + pontuacaoContador) == 100){
+
+  fetch("/quiz/fetchQuiz", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      // crie um atributo que recebe o valor recuperado aqui
+      // Agora vá para o arquivo routes/usuario.js
+      acertosServer: nomeVar,
+      errosServer: emailVar,
+      fkUsuarioServer: sessionStorage.ID_USUARIO
+    })
+  }).then(function (resposta) {
+  
+    console.log("resposta: ", resposta);
+  
+    if (resposta.ok) {
+      cardErro.style.display = "block";
+  
+      mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+  
+      setTimeout(() => {
+        window.location = "login.html";
+      }, "2000")
+  
+      limparFormulario();
+      finalizarAguardar();
+    } else {
+      throw ("Houve um erro ao tentar realizar o cadastro!");
+    }
+  }).catch(function (resposta) {
+    console.log(`#ERRO: ${resposta}`);
+    finalizarAguardar();
+  });
+  
+  return false;
+  
+  function sumirMensagem() {
+  cardErro.style.display = "none"
+  }
+}

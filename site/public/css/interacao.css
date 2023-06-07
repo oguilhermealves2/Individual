@@ -1,4 +1,4 @@
-body{
+body {
   font-family: arial;
   font-size: 16px;
   margin: 0;
@@ -12,53 +12,49 @@ body{
 /*Começo do nav-bar*/
 
 .container {
-  background-color: #06CDBD; /*so coloquei a imagem */
+  background-color: #06cdbd; /*so coloquei a imagem */
   background-image: url(../assets/logo.png);
-   background-attachment: fixed; /*Aqui ele esta fixando mesmo que role a tela */
-   background-size: cover; /*Arruma a imagem */
-   height: 12vh;
-   width: 100%;
-   }
-   
-   header {
-       display: flex;
-       align-items: center;  /*Alinhou o texto no centro (sentido y) */
-       justify-content: center; /*Separou os elementos */
-       padding: 0 30px;
-       height: 110px;
-   
-   }
-   
-   .logo {
-       width: 80%;
-   }
-   
-   /* Onde está a imagem da home */
-   .navbar-logo {
-       display: flex;
-       align-items: center;
-   }
-   
-   /*Inicio, sobre, curiosidades  */
-   .navbar {
-       width: 33.3%;
-       display: flex;
-       justify-content: space-between;
-      
-   }
-   
-   /*Quase a mesma coisa, pórem cada palavra em especifico */
-   .navbar a {
-       color: rgb(255, 255, 255);
-       font-weight: 700; /*  Peso da fonte (importada do google) */
-       font-size: 25px; /*Tamanho da fonte */
-      
-   }
-   
-  
- /*Fim da nav-bar */
+  background-attachment: fixed; /*Aqui ele esta fixando mesmo que role a tela */
+  background-size: cover; /*Arruma a imagem */
+  height: 12vh;
+  width: 100%;
+}
 
-.qa_box{
+header {
+  display: flex;
+  align-items: center; /*Alinhou o texto no centro (sentido y) */
+  justify-content: center; /*Separou os elementos */
+  padding: 0 30px;
+  height: 110px;
+}
+
+.logo {
+  width: 80%;
+}
+
+/* Onde está a imagem da home */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+/*Inicio, sobre, curiosidades  */
+.navbar {
+  width: 33.3%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/*Quase a mesma coisa, pórem cada palavra em especifico */
+.navbar a {
+  color: rgb(255, 255, 255);
+  font-weight: 700; /*  Peso da fonte (importada do google) */
+  font-size: 25px; /*Tamanho da fonte */
+}
+
+/*Fim da nav-bar */
+
+.container-quiz {
   width: 500px;
   padding: 20px;
   min-height: 100px;
@@ -68,44 +64,44 @@ body{
   margin-top: 25vh;
 }
 
-.qa_header {
-  background-color: #06CDBD;
+.cabecario-quiz {
+  background-color: #06cdbd;
   color: #fff;
   display: flex;
   justify-content: space-between;
   padding: 15px 20px;
   margin: -20px -20px 20px;
-  border-radius:25px 25px 0 0;
+  border-radius: 25px 25px 0 0;
   font-size: 20px;
 }
 
-.qa_set{
+.caixas_de_perguntas {
   display: none;
 }
-.qa_set.active{
+.caixas_de_perguntas.ativar {
   display: block;
 }
-.qa_set h4{
+.caixas_de_perguntas h4 {
   margin: 0 0 15px;
   font-size: 20px;
 }
-.qa_ans_row{
+.perguntas {
   position: relative;
   margin-bottom: 10px;
 }
 
-.qa_ans_row input{
-opacity: 0;
-position: absolute;
-left: 0;
-top: 0;
-width: 100%;
-height: 100%;
-z-index: 1;
-cursor: pointer;
+.perguntas input {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  cursor: pointer;
 }
 
-.qa_ans_row span{
+.perguntas span {
   display: block;
   padding: 8px 15px;
   background-color: #dcfff4;
@@ -113,35 +109,34 @@ cursor: pointer;
   transition: all 0.3s ease-out;
 }
 
-.qa_ans_row:hover span{
+.perguntas:hover span {
   background-color: #9ab5ac;
 }
 
-.qa_ans_row input:checked + span{
+.perguntas input:checked + span {
   background-color: #ff0000;
 }
 
-.qa_ans_row input[valid]:checked + span{
+.perguntas input[valid]:checked + span {
   background-color: green;
   color: #fff;
 }
 
-.qa_footer{
+.footer_quiz {
   padding: 10px 0 0;
   text-align: right;
 }
 
-.btn1{
+.btn1 {
   display: inline-block;
   padding: 8px 20px;
-  background-color: #06CDBD;
+  background-color: #06cdbd;
   color: #ffffff;
   border-radius: 15px;
   cursor: pointer;
   transition: all 0.3s ease-out;
 }
 
-
-.btn:hover{
+.btn:hover {
   background-color: #ffffff;
 }
