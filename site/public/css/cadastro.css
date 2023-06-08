@@ -165,14 +165,14 @@ body {
 
 .card_erro {
   display: none;
-  background-color: #fff;
-  color: black;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
   width: 230px;
   position: fixed;
-  border-radius: 4px;
-  border: #e6005a 3px solid;
+  border-radius: 28px;
+  border: #06cdbc74 3px solid;
   padding: 10px;
-  margin-right: 10%;
+  margin-right: 10.5%;
 }
 
 .card_erro #mensagem_erro{
@@ -192,6 +192,23 @@ body {
 .inputs {
   width: 20vw;
   padding: 0 20px 0 0;
+}
+
+#genero {
+  width: 106%;
+  border-radius: 66px;
+  border: 2px solid white;
+  padding: 10px 10px;
+  margin-bottom: 8px;
+  text-align: center;
+  font-weight: 500;
+ 
+ 
+}
+
+#genero option {
+  display: flex;
+  margin-right: 10px
 }
 
 input {
