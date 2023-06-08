@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/DCLOGO3.png">
+    <title>Detective Comics Dash Quiz</title>
+    <link rel="stylesheet" href="./css/dashQuiz.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital@1&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="./js/funcoes.js"></script>
+
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="fechar" id="diminuir">
+            <a onclick="fechar()">
+                <img src="https://cdn-icons-png.flaticon.com/512/56/56763.png" alt="" width="30px">
+            </a>
+        </div>
+
+        <div class="logo">
+            <a href="./index.html">
+                <img src="./assets/logo3attt.png" alt="LOGOPG">
+            </a>
+        </div>
+
+        <div class="sair">
+            <a href="./index.html" title="Voltar para o Inicio"><img
+                    src="https://cdn-icons-png.flaticon.com/512/1828/1828479.png" alt="" width="30px"></a>
+        </div>
+
+
+
+    </header>
+
+    <div class="inicio">
+        <div class="menu-hamburguer" id="lateralI" style="margin-left: -40vh;">
+            <div class="lateral">
+                <div>
+                    <img class="imagem-menu" src="assets/logo2.png" alt="">
+                    <br>
+                    <p>Seja Bem-Vindo(a),
+                       <div class="nome-banco" style="color: black;" id="div_usuario"></div>!</p>
+                    <br><br><br><br><br>
+                    </div>
+                <br>
+                <br>
+
+                <div>
+                    <a href="login.html">Login</a>
+                    <br>
+                    <a href="cadastro.html">Cadastro</a>
+                    <br>
+                    <a href="start.html">Quiz</a>
+                    <br>
+                    <br><br>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="parte-dash">
+            <br>
+            <br>
+            <ul>
+                <li class="Dash" id="dash" style="margin-left: 50vh;">
+                    <canvas id="myChart"></canvas>
+                </li>
+            </ul>
+            <div class="dashPizza">
+                <ul>
+                    <li class="Dash2" id="dash">
+                        <canvas id="myChart2"></canvas>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+</body>
+
+</html>
+
+<script>
+    div_usuario.innerHTML = sessionStorage.NOME_USUARIO
+    function fechar() {
+        var lateral = document.getElementById('lateralI')
+        var margin = document.getElementById('diminuir')
+
+
+        var respostaQ = document.getElementById('RespostaQ')
+
+        if (lateral.style.marginLeft == '0vh') {
+            lateral.style.marginLeft = '-40vh'
+            margin.style.marginLeft = '2vh'
+
+        } else {
+            lateral.style.marginLeft = '0vh'
+            margin.style.marginLeft = '37vh'
+        }
+    }
+
+
+    let proximaAtualizacao;
+
+    window.onload = obterDadosGrafico(1);
+
+    function obterDadosGrafico(idAquario) {
+
+        if (proximaAtualizacao != undefined) {
+            clearTimeout(proximaAtualizacao);
+        }
+
+
+        fetch(`/medidas/ultimas/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    plotarGrafico(resposta, idAquario);
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
+    // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
+    // A função *plotarGrafico* também invoca a função *atualizarGrafico*
+    function plotarGrafico(resposta, idAquario) {
+        console.log('Iniciando plotagem do gráfico...');
+
+        var dados = {
+            labels: [],
+            datasets: [
+                {
+                    label: 'Média Acertos',
+                    backgroundColor: 'black',
+                    borderColor: '#06cdbc4f',
+                    borderWidth: 3,
+                    data: []
+                },
+                {
+                    label: 'Média Erros',
+                    backgroundColor: '#06cdbc4f',
+                    borderColor: 'black',
+                    borderWidth: 3,
+                    data: []
+                }
+            ]
+        };
+
+        for (var i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            dados.labels.push(registro.Nome);
+            dados.datasets[0].data.push(registro.Acertos);
+            dados.datasets[1].data.push(registro.Erros);
+        }
+
+        var ctx = myChart.getContext('2d');
+        window.myChart = new Chart(ctx, {
+            type: 'bar',
+            data: dados,
+            options: {
+                indexAxis: 'x',
+                responsive: true,
+                animation: { duration: 900 },
+                hoverMode: 'index',
+                stacked: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        font: {
+                            size: 20,
+                            family: 'Oswald, sans-serif'
+                        },
+                        color: 'rgb(0, 255, 0)'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: 'black'
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color: 'white',
+                            font: {
+                                family: 'Oswald, sans-serif'
+                            }
+                        },
+                        grid: {
+                            color: 'black'
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+
+
+</script>

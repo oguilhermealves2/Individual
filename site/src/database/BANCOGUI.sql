@@ -25,4 +25,15 @@ fkUsuario INT,
           CONSTRAINT pkquiz PRIMARY KEY (id, fkUsuario));
           
           insert into quiz values 
-          (null, 3, 2, 1)
+          (null, 3, 2, 1);
+          
+          select * from quiz;
+
+          SELECT nome, SUM(acertos), SUM(erros) FROM quiz JOIN usuario ON usuario.id = fkUsuario GROUP BY fkUsuario;
+
+      
+
+          SELECT nome as Nome, ROUND(AVG(acertos), 0) AS Acertos, ROUND(AVG(erros), 0) AS Erros
+FROM quiz
+JOIN usuario ON usuario.id = fkUsuario
+GROUP BY fkUsuario limit 5;

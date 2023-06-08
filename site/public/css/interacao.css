@@ -2,7 +2,7 @@ body {
   font-family: arial;
   font-size: 16px;
   margin: 0;
-  background-color: #000000;
+  background-color: #06cdbc75;
   display: flex;
   align-items: center;
   min-height: 100vh;
@@ -35,21 +35,22 @@ header {
 /* Onde está a imagem da home */
 .navbar-logo {
   display: flex;
+  text-align: center;
   align-items: center;
+  justify-content: center;
+
 }
 
-/*Inicio, sobre, curiosidades  */
-.navbar {
-  width: 33.3%;
-  display: flex;
-  justify-content: space-between;
+.logo-peixes {
+  position: fixed;
+  right: 0;
+  transform: translateX(50%);
+  overflow: hidden;
+  margin-top: 109%;
 }
 
-/*Quase a mesma coisa, pórem cada palavra em especifico */
-.navbar a {
-  color: rgb(255, 255, 255);
-  font-weight: 700; /*  Peso da fonte (importada do google) */
-  font-size: 25px; /*Tamanho da fonte */
+.logo-peixes img {
+  width: 130%;
 }
 
 /*Fim da nav-bar */
@@ -135,6 +136,16 @@ header {
   border-radius: 15px;
   cursor: pointer;
   transition: all 0.3s ease-out;
+}
+
+.finalizar {
+  display: inline-block;
+  padding: 8px 20px;
+  background-color: #06cdbd;
+  color: #ffffff;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.8s ease-out;
 }
 
 .btn:hover {
