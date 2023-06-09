@@ -7,7 +7,7 @@
 
 /*FUNDO DA TELA DO GRAFICO */
 .inicio {
-  background-color: #06cdbc4f;
+  background-color: #ffffff;
   box-shadow: inset 5px 5px 5px 5px rgba(0, 0, 0, 0.418);
   border-bottom: 0;
   height: 100vh;
@@ -15,7 +15,7 @@
 
 /*MENU HAMBURGUER */
 .menu-hamburguer {
-  background-color: #06cdbcb4;
+  background-color: #00000041;
   width: 39.5vh;
   height: 100vh;
   position: fixed;
@@ -51,7 +51,7 @@ header {
 
 .header {
   width: 200vh;
-  background-color: #06cdbd;
+  background-color: #000000;
   box-shadow: #00000035 50px 250px 300px -15px inset;
 }
 
@@ -106,7 +106,7 @@ nav ul {
 }
 
 .lateral span {
-  color: rgb(0, 0, 151);
+  color: #06cdbcb4;
   display: flex;
   font-size: 5vh;
 }
@@ -154,4 +154,131 @@ nav ul {
 .lateral a:hover {
   font-size: 3.75vh;
   text-decoration: underline black;
+}
+
+
+
+/*CARROSSEL */ 
+
+.paizao {
+  display: flex;
+  width: 59vh;
+  margin-left: 72vh;
+}
+
+.container-quiz {
+  width: 500px;
+  padding: 20px;
+  min-height: 100px;
+  background-color: #ffffff;
+  box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.37);
+  border-radius: 25px;
+  margin-top: 35vh;
+ 
+  
+}
+
+.cabecario-quiz {
+  background-color: #000000;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+  margin: -20px -20px 20px;
+  border-radius: 25px 25px 0 0;
+  font-size: 20px;
+}
+
+.caixas_de_perguntas {
+  display: none;
+}
+.caixas_de_perguntas.ativar {
+  display: block;
+}
+.caixas_de_perguntas h4 {
+  margin: 0 0 15px;
+  font-size: 20px;
+}
+.perguntas {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.perguntas input {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.perguntas span {
+  display: block;
+  padding: 8px 15px;
+  background-color: #dcfff4;
+  border-radius: 15px;
+  transition: all 0.3s ease-out;
+}
+
+.perguntas:hover span {
+  background-color: #9ab5ac;
+}
+
+.perguntas input:checked + span {
+  background-color: #ff0000;
+}
+
+.perguntas input[valid]:checked + span {
+  background-color: green;
+  color: #fff;
+}
+
+.footer_quiz {
+  padding: 10px 0 0;
+  text-align: right;
+}
+
+.btn1 {
+  display: inline-block;
+  padding: 8px 20px;
+  background-color: #000000;
+  color: #ffffff;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+.finalizar {
+  display: inline-block;
+  padding: 8px 20px;
+  background-color: #000000;
+  color: #ffffff;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.8s ease-out;
+}
+
+.tentarNovamente {
+  display: inline-block;
+  padding: 8px 20px;
+  background-color: #000000;
+  color: #ffffff;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.8s ease-out;
+}
+
+.btn:hover {
+  background-color: #ffffff;
+}
+
+.tentarNovamente:hover {
+  background-color: #ffffff;
+}
+
+.finalizar:hover {
+  background-color: #ffffff;
 }
