@@ -150,8 +150,9 @@
       </div>
     </div>
     <div class="footer_quiz">
-      <span class="btn1" id="proxima">Skip</span>
+      <span class="btn1" id="proxima">Próximo</span>
       <button class="finalizar" onclick="cadastroQuiz()">Finalizar</button>
+      <button class="tentarNovamente" onclick="TentarNovamente()">Tente +1</button>
     </div>
   </div>
 
@@ -185,14 +186,14 @@
 
   proxima.addEventListener('click', function () {
     step()
-    duracao = 15
+    duracao = 10
   })
 
   perg.forEach(function (pergOne) {
     pergOne.addEventListener('click', function () {
       setTimeout(function () {
         step()
-        duracao = 15
+        duracao = 10
       }, 500)
 
       var valid = this.getAttribute("valid");
@@ -220,23 +221,27 @@
   }
 
   var duracaoTime = setInterval(function () {
-    if (duracao == 15) {
+    if (duracao == 10) {
       duracao = 0
     }
     duracao += 1
     cronometro.innerHTML = duracao;
-    if (cronometro.innerHTML == "15") {
+    if (cronometro.innerHTML == "10") {
       step()
     }
 
   }, 1000)
 
 
-
   /*jogando o quiz pro banco */
+
+  function TentarNovamente() {
+    window.location = 'start.html'
+  }
 
 
   function cadastroQuiz() {
+    window.location = 'dashQuiz.html'
     var fkVar = sessionStorage.ID_USUARIO;
     var acertosVar = pontuacaoContador
     var errosVar = errosContador

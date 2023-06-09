@@ -1,55 +1,157 @@
-body {
-  font-family: arial;
-  font-size: 16px;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,800&display=swap');
+
+* {
   margin: 0;
-  background-color: #06cdbc75;
-  display: flex;
+  padding: 0;
+}
+
+/*FUNDO DA TELA DO GRAFICO */
+.inicio {
+  background-color: #06cdbc4f;
+  box-shadow: inset 5px 5px 5px 5px rgba(0, 0, 0, 0.418);
+  border-bottom: 0;
+  height: 100vh;
+}
+
+/*MENU HAMBURGUER */
+.menu-hamburguer {
+  background-color: #06cdbcb4;
+  width: 39.5vh;
+  height: 100vh;
+  position: fixed;
+  box-shadow: 3px 3px 3px 3px #00000069, 0 100px 300px -15px #00000083 inset;
+  border-radius: 4vh;
+  transition: 0.6s;
+  z-index: 6;
+  overflow-y: auto;
+  justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  flex-direction: column;
+  text-align: center;
+  overflow-x: hidden;
 }
 
-/*Começo do nav-bar*/
-
-.container {
-  background-color: #06cdbd; /*so coloquei a imagem */
-  background-image: url(../assets/logo.png);
-  background-attachment: fixed; /*Aqui ele esta fixando mesmo que role a tela */
-  background-size: cover; /*Arruma a imagem */
-  height: 12vh;
-  width: 100%;
+.imagem-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40vh;
+  margin-left: 5vh;
+  margin-top: -8vh;
 }
 
+
+/*CABECARIO */
 header {
   display: flex;
-  align-items: center; /*Alinhou o texto no centro (sentido y) */
-  justify-content: center; /*Separou os elementos */
-  padding: 0 30px;
-  height: 110px;
+  justify-content: space-between;
+  box-shadow: 3px 3px 3px 3px #00000061;
+  padding: 1vh 5vh;
+  position: fixed;
+}
+
+.header {
+  width: 200vh;
+  background-color: #06cdbd;
+  box-shadow: #00000035 50px 250px 300px -15px inset;
 }
 
 .logo {
-  width: 80%;
-}
-
-/* Onde está a imagem da home */
-.navbar-logo {
   display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-
-}
-
-/* Onde está a imagem dos peixes na esquerda */
-.logo-peixes {
-  position: fixed;
-  left: -14%;
-  transform: translateY(-10%);
-  margin-top: 100%;
+  margin-right: 85vh;
   
 }
 
-.logo-peixes img {
-  width: 187%;
+.logo img {
+  display: flex;
+  height: 12vh;
+  cursor: pointer;
+
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+.voltar {
+  width: 5vh;
+  height: 5vh;
+  margin-left: 2vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 6vh;
+  transition: 0.6s;
+  margin-top: 3vh;
+}
+
+.voltar img {
+  width: 6vh;
+}
+
+.voltar a:hover {
+  transform: scale(1.15);
+}
+
+/* parte lateral */
+
+.lateral {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Oswald', sans-serif;
+  text-align: left;
+  margin-top: 3vh;
+}
+
+.lateral span {
+  color: rgb(0, 0, 151);
+  display: flex;
+  font-size: 5vh;
+}
+
+.lateral img {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.nome-banco {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  margin-left: 0vh;
+  font-size: 3vh;
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+}
+
+.lateral p {
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  text-decoration: none;
+  margin-left: 0vh;
+  font-size: 3vh;
+  color: rgb(255, 255, 255);
+  margin-top: -10vh;
+}
+
+.lateral a {
+  display: flex;
+  justify-content: left;
+  text-align: left;
+  text-decoration: none;
+  margin-left: 3vh;
+  font-size: 3.7vh;
+  color: rgb(255, 255, 255);
+  transition: 0.3s;
+  margin-top: -1vh;
+}
+
+.lateral a:hover {
+  font-size: 3.75vh;
+  text-decoration: underline black;
 }

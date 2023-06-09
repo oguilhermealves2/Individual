@@ -120,6 +120,7 @@ body {
       justify-content: center;
       align-items: center;
       margin-top: 0.5vh;
+      
     
   }
 
@@ -198,7 +199,7 @@ input {
 }
 
 input:focus {
-  border: 2px solid rgb(4, 39, 240);
+  border: 2px solid rgb(0, 0, 0);
   outline: none;
 }
 
@@ -248,11 +249,14 @@ button:hover {
 .loading-div {
   width: 50px;
   display: none;
+  
 }
 
 .loading-div img {
 height: 50px;
 width: 50px;
+margin-top: 3vh;
+
 }
 
 #div_erros_login {

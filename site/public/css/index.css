@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,4body00;0,500;0,700;1,800&display=swap');
 
 * {
   margin: 0;
@@ -191,7 +191,7 @@ header {
   height: 100%;
   align-items: center;
   text-align: start;
-  font-weight: 800;
+  font-weight: 500;
   font-size: 25px;
 }
 
@@ -216,7 +216,7 @@ header {
   height: 100%;
   align-items: center;
   text-align: left;
-  font-weight: 800;
+  font-weight: 500;
   font-size: 25px;
   margin: 50px;
 }
@@ -237,7 +237,7 @@ header {
   height: 100%;
   align-items: center;
   text-align: start;
-  font-weight: 800;
+  font-weight: 500;
   font-size: 25px;
   justify-content: space-between;
 }
@@ -262,7 +262,7 @@ header {
   height: 100%;
   align-items: center;
   text-align: left;
-  font-weight: 800;
+  font-weight: 500;
   font-size: 25px;
   margin: 50px;
 }
@@ -284,7 +284,7 @@ header {
   height: 100%;
   align-items: center;
   text-align: start;
-  font-weight: 800;
+  font-weight: 500;
   font-size: 25px;
   justify-content: space-between;
 }
@@ -302,14 +302,15 @@ header {
   background-size: 100% 300vh;
   background-repeat: repeat-y;
   box-shadow: #06cdbc86 50px 250px 300px -15px inset;
-  height: 80vh;
+  height: 85vh;
   text-align: center;
   padding: 60px;
   position: relative;
 }
 
 .telasobre h1 {
-  font-weight: 800;
+  margin-top: -3vh;
+  font-weight: 500;
   font-size: 50px;
   color: #ffffff;
 }
@@ -323,13 +324,16 @@ header {
   justify-content: center;
   font-size: 25px;
   margin: 60px;
+  margin-top: 10vh;
 }
 
 .textosobre p {
-  font-weight: 800;
+  font-weight: 500;
+  color: #000000;
 }
 
 .textop {
+  margin-top: 12vh;
   width: 90vh;
 }
 
@@ -340,12 +344,10 @@ header {
   height: 30vh;
   position: absolute;
   right: -10vh;
-  top: 36.7vh;
-  opacity: 0.8;
+  top: 41.5vh;
 }
 
 /*                         Footer                        */
-
 
 .footer {
   width: 200vh;
@@ -358,32 +360,32 @@ header {
   color: white;
   justify-content: center;
   text-align: center;
-  padding-top: 1vh;
+  padding-top: 3vh;
 }
 
 .footer p {
-    color: white;
-    justify-content: center;
-    text-align: center;
-    padding-top: 3vh;
-    font-size: 20px;
+  color: white;
+  justify-content: center;
+  text-align: center;
+  padding-top: 2vh;
+  font-size: 20px;
 }
 
 .footer p img {
-    width: 1%;
+  width: 1%;
 }
 
 .logos {
-    display: flex;
-    justify-content: center;
-    padding-top: 5vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 3vh;
 }
 
 .logos a {
-    width: 10%;
+  width: 10%;
 }
 
-.logo-instagram{
+.logo-instagram {
   width: 25%;
   margin-left: 50%;
 }
@@ -393,6 +395,25 @@ header {
   margin-right: 0%;
 }
 
+.seta {
+  display: flex;
+  justify-content: right;
+  margin-top: -9vh;
+  transform: translateY(-5%);
+  animation: moveArrow 2s infinite;
+}
+
+.seta img {
+  width: 5%;
+  margin-left: 180vh;
+  height: auto;
+}
+
+@keyframes moveArrow {
+    0% { transform: translateY(-50%); }
+    50% { transform: translateY(0); }
+    100% { transform: translateY(-50%); }
+  }
 /*ALERTA DE ERRO DA API */
 
 .alerta_erro {
@@ -416,4 +437,3 @@ header {
   font-weight: 500;
   font-size: 20px;
 }
-

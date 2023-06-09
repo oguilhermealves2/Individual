@@ -6,24 +6,76 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="js/funcoes.js"></script>
-  <title>Home</title>
+  <title>Episódios The Chosen</title>
   <link rel="stylesheet" href="css/telinha.css">
   <link rel="stylesheet" href="">
 </head>
 
 <body>
 
-  <!---Cabecario universal-->
+  <header class="header">
+    <div class="voltar" id="diminuir">
+      <a onclick="voltar()">
+        <img src="https://icon-library.com/images/mobile-menu-icon-png/mobile-menu-icon-png-16.jpg" alt="" width="30px">
+      </a>
+    </div>
+    <div class="logo">
+      <a href="./index.html">
+        <img src="./assets/logo3attt.png" alt="">
+      </a>
+    </div>
+  </header>
 
-  <div class="container">
-    <header>
-      <div class="navbar-logo">
-        <img class="logo" src="assets/logo3attt.png" alt="" />
-      </div>
-      <div class="logo-peixes">
-          <img src="assets/logo.png" alt="">
-      </div>
-    </header>
-  </div>
+  <div class="inicio">
+    <div class="menu-hamburguer" id="lateralI" style="margin-left: -40vh;">
+      <div class="lateral">
+        <div>
+          <img class="imagem-menu" src="assets/logo2.png" alt="">
+          <br>
+          <p>Seja Bem-Vindo(a),
+          <div class="nome-banco" style="color: black;" id="div_usuario"></div>
+          </p>
+          <br><br><br><br><br><br><br>
+        </div>
+        <br>
+        <br>
 
-   <!---Fim do cabecario-->
+        <div>
+          <a href="index.html#Inicio">Início</a>
+          <br><br><br>
+          <a href="index.html#Curiosidades">Curiosidades</a>
+          <br><br><br>
+          <a href="index.html#Sobre">Sobre</a>
+          <br><br><br>
+          <a href="start.html">Quiz</a>
+          <br><br><br>
+          <a href="dashQuiz.html">DashBoard</a>
+          <br>
+          <br><br>
+
+        </div>
+      </div>
+    </div>
+
+</body>
+
+<script>
+
+  /* ABRINDO E FECHANDO O MENU-HAMBURGUER */
+
+  div_usuario.innerHTML = sessionStorage.NOME_USUARIO
+  function voltar() {
+    var lateral = document.getElementById('lateralI')
+    var margin = document.getElementById('diminuir')
+
+    if (lateral.style.marginLeft == '0vh') {
+      lateral.style.marginLeft = '-40vh'
+      margin.style.marginLeft = '2vh'
+
+    } else {
+      lateral.style.marginLeft = '0vh'
+      margin.style.marginLeft = '37vh'
+    }
+  }
+
+</script>

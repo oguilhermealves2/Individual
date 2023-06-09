@@ -148,6 +148,24 @@ header {
   transition: all 0.8s ease-out;
 }
 
+.tentarNovamente {
+  display: inline-block;
+  padding: 8px 20px;
+  background-color: #06cdbd;
+  color: #ffffff;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.8s ease-out;
+}
+
 .btn:hover {
+  background-color: #ffffff;
+}
+
+.tentarNovamente:hover {
+  background-color: #ffffff;
+}
+
+.finalizar:hover {
   background-color: #ffffff;
 }

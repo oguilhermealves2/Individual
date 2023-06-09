@@ -5,21 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./img/DCLOGO3.png">
-    <title>Detective Comics Dash Quiz</title>
+    <title>DashBoard</title>
     <link rel="stylesheet" href="./css/dashQuiz.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital@1&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
     <script src="./js/funcoes.js"></script>
 
 </head>
@@ -28,9 +16,9 @@
 
     <header class="header">
 
-        <div class="fechar" id="diminuir">
-            <a onclick="fechar()">
-                <img src="https://cdn-icons-png.flaticon.com/512/56/56763.png" alt="" width="30px">
+        <div class="voltar" id="diminuir">
+            <a onclick="voltar()">
+                <img src="https://icon-library.com/images/mobile-menu-icon-png/mobile-menu-icon-png-16.jpg" alt="" width="30px">
             </a>
         </div>
 
@@ -39,13 +27,6 @@
                 <img src="./assets/logo3attt.png" alt="LOGOPG">
             </a>
         </div>
-
-        <div class="sair">
-            <a href="./index.html" title="Voltar para o Inicio"><img
-                    src="https://cdn-icons-png.flaticon.com/512/1828/1828479.png" alt="" width="30px"></a>
-        </div>
-
-
 
     </header>
 
@@ -63,13 +44,14 @@
                 <br>
 
                 <div>
-                    <a href="login.html">Login</a>
-                    <br>
-                    <a href="cadastro.html">Cadastro</a>
-                    <br>
-                    <a href="start.html">Quiz</a>
-                    <br>
+                    <a href="index.html#Inicio">Início</a>
                     <br><br>
+                    <a href="index.html#Curiosidades">Curiosidades</a>
+                    <br><br>
+                    <a href="index.html#Sobre">Sobre</a>
+                    <br><br>
+                    <a href="start.html">Quiz</a>
+                    
 
                 </div>
             </div>
@@ -103,7 +85,7 @@
 
 <script>
     div_usuario.innerHTML = sessionStorage.NOME_USUARIO
-    function fechar() {
+    function voltar() {
         var lateral = document.getElementById('lateralI')
         var margin = document.getElementById('diminuir')
 
@@ -210,7 +192,7 @@
                     },
                     x: {
                         ticks: {
-                            color: 'white',
+                            color: 'black',
                             font: {
                                 family: 'Oswald, sans-serif'
                             }

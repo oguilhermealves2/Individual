@@ -48,7 +48,7 @@ function mostrarModal() {
     divModal.style.display = "flex";
 }
 
-function fecharModal() {
+function voltarModal() {
     var divModal = document.getElementById("div_modal");
     divModal.style.display = "none";
 }
