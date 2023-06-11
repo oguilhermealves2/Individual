@@ -7,38 +7,10 @@
 
 /*FUNDO DA TELA DO GRAFICO */
 .inicio {
-  background-color: #ffffff;
-  box-shadow: inset 5px 5px 5px 5px rgba(0, 0, 0, 0.418);
+  background-color: #06cdbc4f;
   border-bottom: 0;
   height: 100vh;
 }
-
-/*MENU HAMBURGUER */
-.menu-hamburguer {
-  background-color: #00000041;
-  width: 39.5vh;
-  height: 100vh;
-  position: fixed;
-  box-shadow: 3px 3px 3px 3px #00000069, 0 100px 300px -15px #00000083 inset;
-  border-radius: 4vh;
-  transition: 0.6s;
-  z-index: 6;
-  overflow-y: auto;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  overflow-x: hidden;
-}
-
-.imagem-menu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40vh;
-  margin-left: 5vh;
-  margin-top: -8vh;
-}
-
 
 /*CABECARIO */
 header {
@@ -50,120 +22,30 @@ header {
 }
 
 .header {
-  width: 200vh;
-  background-color: #000000;
-  box-shadow: #00000035 50px 250px 300px -15px inset;
+  width: 190vh;
+  height: 10vh;
+  background-color: #06cdbd;
 }
 
 .logo {
   display: flex;
-  margin-right: 85vh;
+  margin-left: 80vh;
   
 }
 
 .logo img {
   display: flex;
-  height: 12vh;
+  height: 9vh;
   cursor: pointer;
 
 }
 
-nav ul {
-  display: flex;
-  list-style: none;
-}
-
-.voltar {
-  width: 5vh;
-  height: 5vh;
-  margin-left: 2vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 6vh;
-  transition: 0.6s;
-  margin-top: 3vh;
-}
-
-.voltar img {
-  width: 6vh;
-}
-
-.voltar a:hover {
-  transform: scale(1.15);
-}
-
-/* parte lateral */
-
-.lateral {
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  flex-direction: column;
-  font-family: 'Oswald', sans-serif;
-  text-align: left;
-  margin-top: 3vh;
-}
-
-.lateral span {
-  color: #06cdbcb4;
-  display: flex;
-  font-size: 5vh;
-}
-
-.lateral img {
-  display: flex;
-  text-align: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.nome-banco {
-  display: flex;
-  justify-content: center;
-  text-decoration: none;
-  margin-left: 0vh;
-  font-size: 3vh;
-  color: rgb(255, 255, 255);
-  font-weight: 700;
-}
-
-.lateral p {
-  display: flex;
-  justify-content: center;
-  text-align: left;
-  text-decoration: none;
-  margin-left: 0vh;
-  font-size: 3vh;
-  color: rgb(255, 255, 255);
-  margin-top: -10vh;
-}
-
-.lateral a {
-  display: flex;
-  justify-content: left;
-  text-align: left;
-  text-decoration: none;
-  margin-left: 3vh;
-  font-size: 3.7vh;
-  color: rgb(255, 255, 255);
-  transition: 0.3s;
-  margin-top: -1vh;
-}
-
-.lateral a:hover {
-  font-size: 3.75vh;
-  text-decoration: underline black;
-}
-
-
-
-/*CARROSSEL */ 
 
 .paizao {
   display: flex;
   width: 59vh;
   margin-left: 72vh;
+  margin-top: -65vh;
 }
 
 .container-quiz {
@@ -173,13 +55,10 @@ nav ul {
   background-color: #ffffff;
   box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.37);
   border-radius: 25px;
-  margin-top: 35vh;
- 
-  
 }
 
 .cabecario-quiz {
-  background-color: #000000;
+  background-color:  #06cdbd;
   color: #fff;
   display: flex;
   justify-content: space-between;
@@ -244,7 +123,7 @@ nav ul {
 .btn1 {
   display: inline-block;
   padding: 8px 20px;
-  background-color: #000000;
+  background-color: #06cdbd;
   color: #ffffff;
   border-radius: 15px;
   cursor: pointer;
@@ -254,7 +133,7 @@ nav ul {
 .finalizar {
   display: inline-block;
   padding: 8px 20px;
-  background-color: #000000;
+  background-color: #06cdbd;
   color: #ffffff;
   border-radius: 15px;
   cursor: pointer;
@@ -264,7 +143,7 @@ nav ul {
 .tentarNovamente {
   display: inline-block;
   padding: 8px 20px;
-  background-color: #000000;
+  background-color:  #06cdbd;
   color: #ffffff;
   border-radius: 15px;
   cursor: pointer;

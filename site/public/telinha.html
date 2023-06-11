@@ -16,48 +16,15 @@
 
 
   <header class="header">
-    <div class="voltar" id="diminuir">
-      <a onclick="voltar()">
-        <img src="https://icon-library.com/images/mobile-menu-icon-png/mobile-menu-icon-png-16.jpg" alt="" width="30px">
-      </a>
-    </div>
     <div class="logo">
       <a href="./index.html">
         <img src="./assets/logo3attt.png" alt="">
       </a>
     </div>
   </header>
-
   <div class="inicio">
-    <div class="menu-hamburguer" id="lateralI" style="margin-left: -40vh;">
-      <div class="lateral">
-        <div>
-          <img class="imagem-menu" src="assets/logo2.png" alt="">
-          <br>
-          <p>Seja Bem-Vindo(a),
-          <div class="nome-banco" style="color: black;" id="div_usuario"></div>
-          </p>
-          <br><br><br><br><br><br><br>
-        </div>
-        <br>
-        <br>
 
-        <div>
-          <a href="index.html#Inicio">Início</a>
-          <br><br><br>
-          <a href="index.html#Curiosidades">Curiosidades</a>
-          <br><br><br>
-          <a href="index.html#Sobre">Sobre</a>
-          <br><br><br>
-          <a href="start.html">Quiz</a>
-          <br><br><br>
-          <a href="dashQuiz.html">DashBoard</a>
-          <br>
-          <br><br>
-
-        </div>
-
-      </div>
+     
 
     </div>
 
@@ -65,7 +32,7 @@
 <div class="paizao">
     <div class="container-quiz">
       <div class="cabecario-quiz">
-        <span>pontuacao <span id="pontuacao">0</span></span>
+        <span>Pontuação: <span id="pontuacao">0</span></span>
         <span id="cronometro">0</span>
       </div>
 
@@ -110,7 +77,7 @@
 
         <div class="caixas_de_perguntas">
           <h4>3. Na parabóla de Jesus sobre a ovelha perdida, quantas ovelhas o pastor tinha tirando a que se perdeu? <br>
-            Faça o caúculo correto! ;)
+            Faça o cálculo correto! ;)
           </h4>
           <div class="perguntas">
             <input type="radio" name="a3">
@@ -126,12 +93,31 @@
           </div>
         </div>
       
-
         <!--Quarta parte da telinha-->
+
+        <div class="caixas_de_perguntas">
+          <h4>4. Judas vendeu Jesus por quantas e quais moedas?
+          </h4>
+          <div class="perguntas">
+            <input type="radio" name="a3">
+            <span>30 moedas de bronze</span>
+          </div>
+          <div class="perguntas">
+            <input type="radio" name="a3">
+            <span>100 moedas de prata</span>
+          </div>
+          <div class="perguntas">
+            <input type="radio" name="a3" valid="valid" id="correto">
+            <span>30 moedas de prata</span>
+          </div>
+        </div>
+
+
+
       <div class="footer_quiz">
-        <span class="btn1" id="proxima">Próximo</span>
-        <button class="finalizar" onclick="cadastroQuiz()">Finalizar</button>
-        <button class="tentarNovamente" onclick="TentarNovamente()">Tente +1</button>
+        <span class="btn1" id="pular">Pular</span>
+        <button class="finalizar" onclick="finalizar()">Finalizar</button>
+        <button class="tentarNovamente" onclick="TentarNovamente()">Tentar novamente</button>
       </div>
     </div>
   
@@ -146,7 +132,17 @@
 
 <script>
 
-  var proxima = document.getElementById('proxima')
+
+ function finalizar() {
+  window.location = 'start.html'
+ }
+
+ function TentarNovamente() {
+  window.location = 'startTelinha.html'
+ }
+
+
+  var pular = document.getElementById('pular')
   var pontuacao = document.getElementById('pontuacao')
   var totalpontuacao = document.getElementById('totalpontuacao')
   var cronometro = document.getElementById('cronometro')
@@ -156,7 +152,7 @@
   var caixasP = document.querySelectorAll('.caixas_de_perguntas')
   var perg = document.querySelectorAll('.caixas_de_perguntas .perguntas input')
 
-  proxima.addEventListener('click', function () {
+  pular.addEventListener('click', function () {
     step()
     duracao = 10
   })
@@ -170,7 +166,7 @@
 
       var valid = this.getAttribute("valid");
       if (valid == "valid") {
-        pontuacaoContador += 20;
+        pontuacaoContador += 25;
         errosContador = 100 - pontuacaoContador;
         pontuacao.innerHTML = pontuacaoContador;
         totalpontuacao.innerHTML = pontuacaoContador;
@@ -186,7 +182,7 @@
     }
     caixasP[contador].className = 'caixas_de_perguntas ativar'
     if (contador == 5) {
-      proxima.style.display = 'none'
+      pular.style.display = 'none'
       clearInterval(duracaoTime);
       cronometro.innerHTML = 0
     }

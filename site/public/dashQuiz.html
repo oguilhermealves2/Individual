@@ -31,8 +31,8 @@
     </header>
 
     <div class="inicio">
-        <div class="menu-hamburguer" id="lateralI" style="margin-left: -40vh;">
-            <div class="lateral">
+        <div class="menu-hamburguer" id="menuCaixa" style="margin-left: -40vh;">
+            <div class="menu">
                 <div>
                     <img class="imagem-menu" src="assets/logo2.png" alt="">
                     <br>
@@ -51,8 +51,8 @@
                     <a href="index.html#Sobre">Sobre</a>
                     <br><br>
                     <a href="start.html">Quiz</a>
-                    
-
+                    <br><br>
+                    <a href="comentarios.html">Comentarios</a>
                 </div>
             </div>
         </div>
@@ -86,18 +86,18 @@
 <script>
     div_usuario.innerHTML = sessionStorage.NOME_USUARIO
     function voltar() {
-        var lateral = document.getElementById('lateralI')
+        var menu = document.getElementById('menuCaixa')
         var margin = document.getElementById('diminuir')
 
 
         var respostaQ = document.getElementById('RespostaQ')
 
-        if (lateral.style.marginLeft == '0vh') {
-            lateral.style.marginLeft = '-40vh'
+        if (menu.style.marginLeft == '0vh') {
+            menu.style.marginLeft = '-40vh'
             margin.style.marginLeft = '2vh'
 
         } else {
-            lateral.style.marginLeft = '0vh'
+            menu.style.marginLeft = '0vh'
             margin.style.marginLeft = '37vh'
         }
     }

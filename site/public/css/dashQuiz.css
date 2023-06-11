@@ -103,9 +103,9 @@ nav ul {
   transform: scale(1.15);
 }
 
-/* parte lateral */
+/* parte menu */
 
-.lateral {
+.menu {
   display: flex;
   justify-content: left;
   align-items: center;
@@ -115,13 +115,13 @@ nav ul {
   margin-top: 3vh;
 }
 
-.lateral span {
+.menu span {
   color: rgb(0, 0, 151);
   display: flex;
   font-size: 5vh;
 }
 
-.lateral img {
+.menu img {
   display: flex;
   text-align: center;
   align-items: center;
@@ -137,7 +137,7 @@ nav ul {
   color: rgb(255, 255, 255);
 }
 
-.lateral p {
+.menu p {
   display: flex;
   justify-content: center;
   text-align: left;
@@ -148,7 +148,7 @@ nav ul {
   margin-top: -10vh;
 }
 
-.lateral a {
+.menu a {
   display: flex;
   justify-content: left;
   text-align: left;
@@ -160,7 +160,7 @@ nav ul {
   margin-top: -1vh;
 }
 
-.lateral a:hover {
+.menu a:hover {
   font-size: 3.75vh;
   text-decoration: underline black;
 }

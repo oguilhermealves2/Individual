@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DashBoard</title>
+    <link rel="stylesheet" href="./css/dashQuiz.css">
+    <link rel="stylesheet" href="./css/comentarios.css">
+    <script src="./js/funcoes.js"></script>
+
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="voltar" id="diminuir">
+            <a onclick="voltar()">
+                <img src="https://icon-library.com/images/mobile-menu-icon-png/mobile-menu-icon-png-16.jpg" alt=""
+                    width="30px">
+            </a>
+        </div>
+
+        <div class="logo">
+            <a href="./index.html">
+                <img src="./assets/logo3attt.png" alt="LOGOPG">
+            </a>
+        </div>
+
+    </header>
+
+    <div class="inicio">
+        <div class="menu-hamburguer" id="lateralI" style="margin-left: -40vh;">
+            <div class="lateral">
+                <div>
+                    <img class="imagem-menu" src="assets/logo2.png" alt="">
+                    <br>
+                    <p>Seja Bem-Vindo(a),
+                    <div class="nome-banco" style="color: black;" id="div_usuario"></div>!</p>
+                    <br><br><br><br><br>
+                </div>
+                <br>
+                <br>
+
+                <div>
+                    <a href="index.html#Inicio">Início</a>
+                    <br><br>
+                    <a href="index.html#Curiosidades">Curiosidades</a>
+                    <br><br>
+                    <a href="index.html#Sobre">Sobre</a>
+                    <br><br>
+                    <a href="start.html">Quiz</a>
+                    <br><br>
+                    <a href="comentarios.html">Comentarios</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="comentarios" id="comentarios"></div>
+
+    </div>
+
+    
+
+</body>
+
+</html>
+
+<script>
+
+    div_usuario.innerHTML = sessionStorage.NOME_USUARIO
+    function voltar() {
+        var lateral = document.getElementById('lateralI')
+        var margin = document.getElementById('diminuir')
+
+
+        var respostaQ = document.getElementById('RespostaQ')
+
+        if (lateral.style.marginLeft == '0vh') {
+            lateral.style.marginLeft = '-40vh'
+            margin.style.marginLeft = '2vh'
+
+        } else {
+            lateral.style.marginLeft = '0vh'
+            margin.style.marginLeft = '37vh'
+        }
+    }
+
+    let newData; 
+
+    fetch('http://localhost:3333/comentarios/listarComentarios')
+        .then(response => response.json())
+        .then(data => {
+            for(var i = 0; i < data.length; i++) {
+            newData = data[i];
+            console.log(newData);
+
+            comentarios.innerHTML += `
+            <div class="comentario">
+                <div class="comentario-titulo">
+                    <span id="nome">${newData.nome}</span>
+                    <span id="dataPostagem">${newData.dataPostagemFormatada}</span>
+                </div>
+                <span id="comentario">${newData.comentario}</span>
+            </div>
+            `
+        }
+    })
+        .catch(error => {
+            console.error('Ocorreu um erro:', error);
+        });
+
+
+</script>
