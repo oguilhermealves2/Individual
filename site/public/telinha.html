@@ -6,143 +6,157 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="js/funcoes.js"></script>
-  <title>Episódios The Chosen</title>
-  <link rel="stylesheet" href="css/telinha.css">
+  <title>Home</title>
+  <link rel="stylesheet" href="css/interacao.css">
   <link rel="stylesheet" href="">
 </head>
 
 <body>
 
+  <!---Cabecario universal-->
 
-
-  <header class="header">
-    <div class="logo">
-      <a href="./index.html">
-        <img src="./assets/logo3attt.png" alt="">
-      </a>
-    </div>
-  </header>
-  <div class="inicio">
-
-     
-
-    </div>
-
-
-<div class="paizao">
-    <div class="container-quiz">
-      <div class="cabecario-quiz">
-        <span>Pontuação: <span id="pontuacao">0</span></span>
-        <span id="cronometro">0</span>
+  <div class="container">
+    <header>
+      <div class="navbar-logo">
+        <img class="logo" src="assets/logo3attt.png" alt="" />
       </div>
-
-      <!--Primeira parte da telinha-->
-
-      <div class="questoes-quiz">
-        <div class="caixas_de_perguntas ativar">
-          <h4>1. Jesus diz que devemos perdoar nosso irmão 70 x ? que é igual a:</h4>
-          <div class="perguntas">
-            <input type="radio" name="a1">
-            <span>70 x 6 = 460</span>
-          </div>
-          <div class="perguntas">
-            <input type="radio" name="a1">
-            <span>70 x 70 = 4600</span>
-          </div>
-          <div class="perguntas">
-            <input type="radio" name="a1"  valid="valid" id="correto">
-            <span>70 x 7 = 490</span>
-          </div>
-        </div>
-
-        <!--Segunda parte da telinha-->
-
-        <div class="caixas_de_perguntas">
-          <h4>2. A biblia ao total tem 66 livros, sendo que 39 se encontram no antigo testamento. Então quantos livros tem o novo testamento?</h4>
-          <div class="perguntas">
-            <input type="radio" name="a2">
-            <span>25</span>
-          </div>
-          <div class="perguntas">
-            <input type="radio" name="a2">
-            <span>29</span>
-          </div>
-          <div class="perguntas">
-            <input type="radio" name="a2" valid="valid" id="correto">
-            <span>27</span>
-          </div>
-        </div>
-
-        <!--Terceira parte da telinha-->
-
-        <div class="caixas_de_perguntas">
-          <h4>3. Na parabóla de Jesus sobre a ovelha perdida, quantas ovelhas o pastor tinha tirando a que se perdeu? <br>
-            Faça o cálculo correto! ;)
-          </h4>
-          <div class="perguntas">
-            <input type="radio" name="a3">
-            <span>10 - 1 = 9</span>
-          </div>
-          <div class="perguntas">
-            <input type="radio" name="a3">
-            <span>43 + 57 = 99</span>
-          </div>
-          <div class="perguntas">
-            <input type="radio" name="a3" valid="valid" id="correto">
-            <span>319 - 220 = 99</span>
-          </div>
-        </div>
-      
-        <!--Quarta parte da telinha-->
-
-        <div class="caixas_de_perguntas">
-          <h4>4. Judas vendeu Jesus por quantas e quais moedas?
-          </h4>
-          <div class="perguntas">
-            <input type="radio" name="a3">
-            <span>30 moedas de bronze</span>
-          </div>
-          <div class="perguntas">
-            <input type="radio" name="a3">
-            <span>100 moedas de prata</span>
-          </div>
-          <div class="perguntas">
-            <input type="radio" name="a3" valid="valid" id="correto">
-            <span>30 moedas de prata</span>
-          </div>
-        </div>
-
-
-
-      <div class="footer_quiz">
-        <span class="btn1" id="pular">Pular</span>
-        <button class="finalizar" onclick="finalizar()">Finalizar</button>
-        <button class="tentarNovamente" onclick="TentarNovamente()">Tentar novamente</button>
+      <div class="logo-peixes">
+          <img src="assets/logo 1.png" alt="">
       </div>
-    </div>
-  
-
-    <script type="text/javascript" src="js/interacao.js"></script>
+    </header>
   </div>
-</div>
+
+  <!---Fim do cabecario-->
 
 
+  <div class="container-quiz">
+    <div class="cabecario-quiz">
+      <span>Pontuação <span id="pontuacao">0</span></span>
+      <span id="cronometro">0</span>
+    </div>
 
+    <!--Primeira parte da telinha-->
+
+    <div class="questoes-quiz">
+      <div class="caixas_de_perguntas ativar">
+        <h4>1. Quantos paẽs e peixes Jesus multiplicou relatado no livro de Mateus?</h4>
+        <div class="perguntas">
+          <input type="radio" name="a1">
+          <span>cinco paẽs e dois peixes</span>
+        </div>
+        <div class="perguntas">
+          <input type="radio" name="a1" valid="valid">
+          <span>onze paẽs e três peixes</span>
+        </div>
+        <div class="perguntas">
+          <input type="radio" name="a1">
+          <span>Um pão e um peixe</span>
+        </div>
+        <div class="perguntas">
+          <input type="radio" name="a1">
+          <span>Três peixes e dois pães</span>
+        </div>
+      </div>
+
+      <!--Segunda parte da telinha-->
+
+      <div class="caixas_de_perguntas">
+        <h4>2. Quantas ovelhas se perderam</h4>
+        <div class="perguntas">
+          <input type="radio" name="a2">
+          <span>100</span>
+        </div>
+        <div class="perguntas">
+          <input type="radio" name="a2">
+          <span>99</span>
+        </div>
+        <div class="perguntas">
+          <input type="radio" name="a2">
+          <span>98</span>
+        </div>
+        <div class="perguntas">
+          <input type="radio" name="a2" valid="valid">
+          <span>97</span>
+        </div>
+      </div>
+
+      <!--Terceira parte da telinha-->
+
+      <div class="caixas_de_perguntas">
+        <h4>3. Quantas vezes precisamos perdoar nosso irmão?</h4>
+        <div class="perguntas">
+          <input type="radio" name="a3">
+          <span>70X7</span>
+        </div>
+        <div class="perguntas">
+          <input type="radio" name="a3" valid="valid">
+          <span>78x9</span>
+        </div>
+        <div class="perguntas">
+          <input type="radio" name="a3">
+          <span>49x9</span>
+        </div>
+        <div class="perguntas">
+          <input type="radio" name="a3">
+          <span>36x8</span>
+        </div>
+      </div>
+
+      <!--Quarta parte da telinha-->
+
+      <div class="caixas_de_perguntas">
+        <h4>4. Quantos milagres Jesus realizou?</h4>
+        <div class="perguntas">
+          <input type="radio" name="a4">
+          <span>18</span>
+        </div>
+        <div class="perguntas">
+          <input type="radio" name="a4">
+          <span>10</span>
+        </div>
+        <div class="perguntas">
+          <input type="radio" name="a4" valid="valid">
+          <span>28</span>
+        </div>
+        <div class="perguntas">
+          <input type="radio" name="a4">
+          <span>90</span>
+        </div>
+      </div>
+
+      <!--Quarta parte da telinha-->
+
+
+      <div class="caixas_de_perguntas ativar">
+        <h4>Sua pontuação total: <span id="totalpontuacao">0</span> de 100</h4>
+      </div>
+    </div>
+    <div class="footer_quiz">
+      <span class="btn1" id="proxima">Próximo</span>
+      <button class="finalizar" onclick="cadastroQuiz()">Finalizar</button>
+      <button class="tentarNovamente" onclick="TentarNovamente()">Tente +1</button>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="js/interacao.js"></script>
 </body>
+
+</html>
 
 <script>
 
+  function cadastro() {
+    window.location = 'cadastro.html'
+  }
 
- function finalizar() {
-  window.location = 'start.html'
- }
-
- function TentarNovamente() {
-  window.location = 'startTelinha.html'
- }
+  function login() {
+    window.location = 'login.html'
+  }
 
 
-  var pular = document.getElementById('pular')
+  /*JS DA INTERAÇÃO */
+
+  var proxima = document.getElementById('proxima')
   var pontuacao = document.getElementById('pontuacao')
   var totalpontuacao = document.getElementById('totalpontuacao')
   var cronometro = document.getElementById('cronometro')
@@ -152,7 +166,7 @@
   var caixasP = document.querySelectorAll('.caixas_de_perguntas')
   var perg = document.querySelectorAll('.caixas_de_perguntas .perguntas input')
 
-  pular.addEventListener('click', function () {
+  proxima.addEventListener('click', function () {
     step()
     duracao = 10
   })
@@ -182,7 +196,7 @@
     }
     caixasP[contador].className = 'caixas_de_perguntas ativar'
     if (contador == 5) {
-      pular.style.display = 'none'
+      proxima.style.display = 'none'
       clearInterval(duracaoTime);
       cronometro.innerHTML = 0
     }
@@ -201,29 +215,47 @@
   }, 1000)
 
 
+  /*jogando o quiz pro banco */
 
-
-
-
-
-
-
-
-
-  /* ABRINDO E FECHANDO O MENU-HAMBURGUER */
-
-  div_usuario.innerHTML = sessionStorage.NOME_USUARIO
-  function voltar() {
-    var lateral = document.getElementById('lateralI')
-    var margin = document.getElementById('diminuir')
-
-    if (lateral.style.marginLeft == '0vh') {
-      lateral.style.marginLeft = '-40vh'
-      margin.style.marginLeft = '2vh'
-
-    } else {
-      lateral.style.marginLeft = '0vh'
-      margin.style.marginLeft = '37vh'
-    }
+  function TentarNovamente() {
+    window.location = 'start.html'
   }
+
+
+  function cadastroQuiz() {
+    var fkVar = sessionStorage.ID_USUARIO;
+    var acertosVar = pontuacaoContador
+    var errosVar = errosContador
+    console.log(pontuacaoContador + "erro :" + errosContador);
+    fetch("/quiz/quizCadastro1", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        acertosServer: acertosVar,
+        errosServer: errosVar,
+        fkUsuarioServer: fkVar
+      })
+    }).then(function (resposta) {
+      
+      window.location = 'start.html'
+      console.log("resposta: ", resposta);
+      
+
+      if (resposta.ok) {
+        cardErro.style.display = "block";
+
+        mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+      } else {
+        throw ("Houve um erro ao tentar realizar o cadastro!");
+      }
+    }).catch(function (resposta) {
+      console.log(`#ERRO: ${resposta}`);
+
+    });
+  }
+
+
 </script>

@@ -65,7 +65,8 @@
                     <canvas id="myChart"></canvas>
                 </li>
             </ul>
-            <div class="dashPizza">
+            <div>
+                <br>
                 <ul>
                     <li class="Dash2" id="dash">
                         <canvas id="myChart2"></canvas>
@@ -165,6 +166,180 @@
             data: dados,
             options: {
                 indexAxis: 'x',
+                responsive: true,
+                animation: { duration: 900 },
+                hoverMode: 'index',
+                stacked: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        font: {
+                            size: 20,
+                            family: 'Oswald, sans-serif'
+                        },
+                        color: 'rgb(0, 255, 0)'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: 'black'
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color: 'black',
+                            font: {
+                                family: 'Oswald, sans-serif'
+                            }
+                        },
+                        grid: {
+                            color: 'black'
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+
+
+/* 2 GRAFICO */
+
+
+    window.onload = obterDadosGrafico1(1);
+
+    function obterDadosGrafico1(idAquario) {
+
+        if (proximaAtualizacao != undefined) {
+            clearTimeout(proximaAtualizacao);
+        }
+
+
+        fetch(`/medidas/ultimas2/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    plotarGrafico2(resposta, idAquario);
+
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+    function plotarGrafico(resposta, idAquario) {
+        console.log('Iniciando plotagem do gráfico...');
+
+        var dados = {
+            labels: [],
+            datasets: [
+                {
+                    label: 'Média Acertos',
+                    backgroundColor: 'black',
+                    borderColor: '#06cdbc4f',
+                    borderWidth: 3,
+                    data: []
+                },
+                {
+                    label: 'Média Erros',
+                    backgroundColor: '#06cdbc4f',
+                    borderColor: 'black',
+                    borderWidth: 3,
+                    data: []
+                }
+            ]
+        };
+
+        for (var i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            dados.labels.push(registro.Nome);
+            dados.datasets[0].data.push(registro.Acertos);
+            dados.datasets[1].data.push(registro.Erros);
+        }
+
+        var ctx2 = myChart2.getContext('2d');
+        window.myChart2 = new Chart(ctx2, {
+            type: 'bar',
+            data: dados,
+            options: {
+                responsive: true,
+                animation: { duration: 900 },
+                hoverMode: 'index',
+                stacked: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        font: {
+                            size: 20,
+                            family: 'Oswald, sans-serif'
+                        },
+                        color: 'rgb(0, 255, 0)'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: 'black'
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color: 'black',
+                            font: {
+                                family: 'Oswald, sans-serif'
+                            }
+                        },
+                        grid: {
+                            color: 'black'
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    function plotarGrafico2(resposta, idAquario) {
+        console.log('Iniciando plotagem do gráfico...');
+
+        var dados = {
+            labels: [],
+            datasets: [
+                {
+                    label: 'Média Acertos',
+                    backgroundColor: 'black',
+                    borderColor: '#06cdbc4f',
+                    borderWidth: 3,
+                    data: []
+                },
+                {
+                    label: 'Média Erros',
+                    backgroundColor: '#06cdbc4f',
+                    borderColor: 'black',
+                    borderWidth: 3,
+                    data: []
+                }
+            ]
+        };
+
+        for (var i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            dados.labels.push(registro.Nome);
+            dados.datasets[0].data.push(registro.Acertos);
+            dados.datasets[1].data.push(registro.Erros);
+        }
+
+        var ctx2 = myChart.getContext('2d');
+        window.myChart2 = new Chart(ctx2, {
+            type: 'bar',
+            data: dados,
+            options: {
                 responsive: true,
                 animation: { duration: 900 },
                 hoverMode: 'index',

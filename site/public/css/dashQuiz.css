@@ -175,17 +175,8 @@ nav ul {
 }
 
 .Dash {
-  margin-top: 26vh;
+  margin-top: 20vh;
   width: 100vh;
-  transition: 0.5s;
-  background-color: rgba(255, 255, 255, 0);
-}
-
-/* parte dash pizza */
-
-.Dash2 {
-  margin-top: 15vh;
-  width: 70vh;
   transition: 0.5s;
   background-color: rgba(255, 255, 255, 0);
 }

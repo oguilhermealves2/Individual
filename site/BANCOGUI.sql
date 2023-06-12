@@ -16,6 +16,17 @@ INSERT INTO usuario VALUES
 select * from usuario;
 
 
+CREATE TABLE quiz1(
+id INT AUTO_INCREMENT,
+acertos INT,
+erros INT,
+fkUsuario INT,
+CONSTRAINT fkQu1 FOREIGN KEY (fkUsuario) REFERENCES usuario(id), 
+CONSTRAINT pkquiz1 PRIMARY KEY (id, fkUsuario));
+
+select * from quiz1;
+
+
 CREATE TABLE quiz(
 id INT AUTO_INCREMENT,
 acertos INT,

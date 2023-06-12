@@ -106,6 +106,7 @@ header {
   width: 100px;
   font-weight: 700;
   color: white;
+  list-style-type: none;
 }
 
 .textohome {
@@ -302,14 +303,14 @@ header {
   background-size: 100% 300vh;
   background-repeat: repeat-y;
   box-shadow: #06cdbc86 50px 250px 300px -15px inset;
-  height: 85vh;
+  height: 90vh;
   text-align: center;
   padding: 60px;
   position: relative;
 }
 
 .telasobre h1 {
-  margin-top: -3vh;
+  margin-top: -5vh;
   font-weight: 500;
   font-size: 50px;
   color: #ffffff;
@@ -324,7 +325,7 @@ header {
   justify-content: center;
   font-size: 25px;
   margin: 60px;
-  margin-top: 10vh;
+  margin-top: 16vh;
 }
 
 .textosobre p {
@@ -345,15 +346,17 @@ header {
   position: absolute;
   right: -10vh;
   top: 41.5vh;
+  z-index: -13;
 }
 
 /*                         Footer                        */
-
 .footer {
-  width: 200vh;
+  width: 100%;
   height: 20vh;
   background-color: #06cdbc;
   box-shadow: #000000b0 0px 150px 300px -15px inset;
+  z-index: 999;
+  position: relative;
 }
 
 .footer h2 {
@@ -400,13 +403,14 @@ header {
   justify-content: right;
   margin-top: -9vh;
   transform: translateY(-5%);
-  animation: moveArrow 2s infinite;
 }
 
 .seta img {
+  animation: moveArrow 2s infinite;
   width: 5%;
-  margin-left: 180vh;
+  right: 60px;
   height: auto;
+  position: absolute;
 }
 
 @keyframes moveArrow {

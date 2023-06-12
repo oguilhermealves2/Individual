@@ -7,3 +7,8 @@ router.post("/quizCadastro", function (req, res) {
     quizController.insertQuiz(req, res);
   });
 module.exports = router;
+
+router.post("/quizCadastro1", function (req, res) {
+  quizController.insertQuiz1(req, res);
+});
+module.exports = router;
