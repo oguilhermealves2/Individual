@@ -32,3 +32,163 @@
     justify-content: space-between;
     margin-bottom: 30px;
 }
+
+.inicio {
+    background-color: #06cdbc4f;
+    box-shadow: inset 5px 5px 5px 5px rgba(0, 0, 0, 0.418);
+    border-bottom: 0;
+    height: 100vh;
+  }
+  
+  .menu-hamburguer {
+    background-color: #06cdbcb4;
+    width: 39.5vh;
+    height: 100vh;
+    position: fixed;
+    box-shadow: 3px 3px 3px 3px #00000069, 0 100px 300px -15px #00000083 inset;
+    border-radius: 4vh;
+    transition: 0.6s;
+    z-index: 6;
+    overflow-y: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow-x: hidden;
+  }
+  
+  .imagem-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40vh;
+    margin-left: 5vh;
+    margin-top: -8vh;
+  }
+  
+  
+  /*CABECARIO */
+  header {
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 3px 3px 3px 3px #00000061;
+    padding: 1vh 5vh;
+    position: fixed;
+  }
+  
+  .header {
+    width: 200vh;
+    background-color: #06cdbd;
+  }
+  
+  .logo {
+    display: flex;
+    margin-right: 85vh;
+  }
+  
+  
+  .logo img {
+    display: flex;
+    height: 12vh;
+    cursor: pointer;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  .voltar {
+    width: 5vh;
+    height: 5vh;
+    margin-left: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6vh;
+    transition: 0.6s;
+    margin-top: 3vh;
+  }
+  
+  .voltar img {
+    width: 6vh;
+  }
+  
+  .voltar a:hover {
+    transform: scale(1.15);
+  }
+  
+  .sair {
+    display: flex;
+    justify-content: center;
+    margin-top: 3.5vh;
+    margin-right: 1vh;
+    width: 10vh;
+    height: 4vh;
+    transition: 0.4s;
+  }
+  
+  .sair:hover {
+    transform: scale(1.15);
+  }
+  
+  /* parte menu */
+  
+  .menu {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Oswald', sans-serif;
+    text-align: left;
+    margin-top: 3vh;
+  }
+  
+  .menu span {
+    color: rgb(0, 0, 151);
+    display: flex;
+    font-size: 5vh;
+  }
+  
+  .menu img {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .nome-banco {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    margin-left: 0vh;
+    font-size: 5vh;
+    color: rgb(255, 255, 255);
+  }
+  
+  .menu p {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    text-decoration: none;
+    margin-left: 0vh;
+    font-size: 3vh;
+    color: rgb(255, 255, 255);
+    margin-top: -10vh;
+  }
+  
+  .menu a {
+    display: flex;
+    justify-content: left;
+    text-align: left;
+    text-decoration: none;
+    margin-left: 3vh;
+    font-size: 3.7vh;
+    color: rgb(255, 255, 255);
+    transition: 0.3s;
+    margin-top: -1vh;
+  }
+  
+  .menu a:hover {
+    font-size: 3.75vh;
+    text-decoration: underline black;
+  }

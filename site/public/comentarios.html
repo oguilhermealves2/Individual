@@ -18,8 +18,7 @@
 
         <div class="voltar" id="diminuir">
             <a onclick="voltar()">
-                <img src="https://icon-library.com/images/mobile-menu-icon-png/mobile-menu-icon-png-16.jpg" alt=""
-                    width="30px">
+                <img src="https://icon-library.com/images/mobile-menu-icon-png/mobile-menu-icon-png-16.jpg" alt="" width="30px">
             </a>
         </div>
 
@@ -32,15 +31,15 @@
     </header>
 
     <div class="inicio">
-        <div class="menu-hamburguer" id="lateralI" style="margin-left: -40vh;">
-            <div class="lateral">
+        <div class="menu-hamburguer" id="menuCaixa" style="margin-left: -40vh;">
+            <div class="menu">
                 <div>
                     <img class="imagem-menu" src="assets/logo2.png" alt="">
                     <br>
                     <p>Seja Bem-Vindo(a),
-                    <div class="nome-banco" style="color: black;" id="div_usuario"></div>!</p>
+                       <div class="nome-banco" style="color: black;" id="div_usuario"></div>!</p>
                     <br><br><br><br><br>
-                </div>
+                    </div>
                 <br>
                 <br>
 
@@ -62,7 +61,7 @@
 
     </div>
 
-    
+
 
 </body>
 
@@ -70,34 +69,34 @@
 
 <script>
 
-    div_usuario.innerHTML = sessionStorage.NOME_USUARIO
+div_usuario.innerHTML = sessionStorage.NOME_USUARIO
     function voltar() {
-        var lateral = document.getElementById('lateralI')
+        var menu = document.getElementById('menuCaixa')
         var margin = document.getElementById('diminuir')
 
 
         var respostaQ = document.getElementById('RespostaQ')
 
-        if (lateral.style.marginLeft == '0vh') {
-            lateral.style.marginLeft = '-40vh'
+        if (menu.style.marginLeft == '0vh') {
+            menu.style.marginLeft = '-40vh'
             margin.style.marginLeft = '2vh'
 
         } else {
-            lateral.style.marginLeft = '0vh'
+            menu.style.marginLeft = '0vh'
             margin.style.marginLeft = '37vh'
         }
     }
 
-    let newData; 
+    let newData;
 
     fetch('http://localhost:3333/comentarios/listarComentarios')
         .then(response => response.json())
         .then(data => {
-            for(var i = 0; i < data.length; i++) {
-            newData = data[i];
-            console.log(newData);
+            for (var i = 0; i < data.length; i++) {
+                newData = data[i];
+                console.log(newData);
 
-            comentarios.innerHTML += `
+                comentarios.innerHTML += `
             <div class="comentario">
                 <div class="comentario-titulo">
                     <span id="nome">${newData.nome}</span>
@@ -106,8 +105,8 @@
                 <span id="comentario">${newData.comentario}</span>
             </div>
             `
-        }
-    })
+            }
+        })
         .catch(error => {
             console.error('Ocorreu um erro:', error);
         });
