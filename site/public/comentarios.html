@@ -8,6 +8,7 @@
     <title>DashBoard</title>
     <link rel="stylesheet" href="./css/dashboard.css">
     <link rel="stylesheet" href="./css/comentarios.css">
+    <link rel="stylesheet" href="./css/modal.css">
     <script src="./js/funcoes.js"></script>
 
 </head>
@@ -57,15 +58,19 @@
                 </div>
             </div>
         </div>
-
         <div class="comentarios" id="comentarios"></div>
-
     </div>
+    <button class="botao-fixo">Novo comentário</button>
 
-    <div>
-        <textarea name="" id="">
-
-    </textarea>
+    <!-- MODAL -->
+    <div class="modal">
+        <div class="modal-conteudo">
+            <span class="fechar">&times;</span>
+            <h2>Que tal deixar um comentário?</h2>
+            <p>Escreva algo logo abaixo!</p>
+            <textarea name="" id="inputComentario" cols="30" rows="10"></textarea>
+            <button class="botao-comentario" onclick="novoComentario()">Comentar</button>
+        </div>
     </div>
 
 </body>
@@ -74,7 +79,11 @@
 
 <script>
 
-    div_usuario.innerHTML = sessionStorage.NOME_USUARIO
+    var userName = sessionStorage.NOME_USUARIO;
+    var userId = sessionStorage.ID_USUARIO;
+    var comentado = false;
+
+    div_usuario.innerHTML = userName;
     function voltar() {
         var menu = document.getElementById('menuCaixa')
         var margin = document.getElementById('diminuir')
@@ -92,11 +101,22 @@
         }
     }
 
+
     let newData;
 
-    fetch('http://localhost:3333/comentarios/listarComentarios')
+    fetch('/comentarios/listarComentarios')
         .then(response => response.json())
         .then(data => {
+            if (data.length < 1) {
+                comentarios.innerHTML += `
+            <div class="comentario">
+                <div class="comentario-titulo">
+                    <span id="nome">Nenhum comentário encontrado</span>
+                </div>
+                <span id="nome">Que tal ser o primeiro a comentar?!</span>
+            </div>
+            `
+            }
             for (var i = 0; i < data.length; i++) {
                 newData = data[i];
                 console.log(newData);
@@ -115,6 +135,44 @@
         .catch(error => {
             console.error('Ocorreu um erro:', error);
         });
+
+
+    // MODAL SCRIPT
+    const botaoFixo = document.querySelector('.botao-fixo');
+    const modal = document.querySelector('.modal');
+    const fecharModal = document.querySelector('.fechar');
+
+    botaoFixo.addEventListener('click', function () {
+        modal.style.display = 'block';
+    });
+
+    fecharModal.addEventListener('click', function () {
+        modal.style.display = 'none';
+    });
+
+
+    function novoComentario() {
+        const data = {
+            fkUsuario: userId,
+            comentario: inputComentario.value
+        };
+
+        fetch('/comentarios/novoComentario', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(response => response.json())
+            .then(result => {
+                location.reload();
+            })
+            .catch(error => {
+                console.error('Ocorreu um erro:', error);
+            });
+
+    }
 
 
 </script>
