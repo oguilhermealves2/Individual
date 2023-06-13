@@ -171,6 +171,8 @@
     window.location = 'login.html'
   }
 
+  
+
 
   /*JS DA INTERAÇÃO */
 
@@ -241,6 +243,7 @@
 
 
   function cadastroQuiz() {
+    window.location = 'dashboard.html'
     var fkVar = sessionStorage.ID_USUARIO;
     var acertosVar = pontuacaoContador
     var errosVar = errosContador
@@ -263,7 +266,7 @@
         cardErro.style.display = "block";
 
         mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-        window.location = 'dashQuiz.html'
+      
 
       } else {
         throw ("Houve um erro ao tentar realizar o cadastro!");

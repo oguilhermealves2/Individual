@@ -6,42 +6,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DashBoard</title>
-    <link rel="stylesheet" href="./css/dashQuiz.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./js/funcoes.js"></script>
 
 </head>
 
+
+
 <body>
 
     <header class="header">
-
+        <!--- fazendo o menu hamburguer ir e voltar-->
         <div class="voltar" id="diminuir">
             <a onclick="voltar()">
-                <img src="https://icon-library.com/images/mobile-menu-icon-png/mobile-menu-icon-png-16.jpg" alt="" width="30px">
+                <img src="https://icon-library.com/images/mobile-menu-icon-png/mobile-menu-icon-png-16.jpg" alt=""
+                    width="30px">
             </a>
         </div>
+        <!--- Logo do centro da dash-->
 
         <div class="logo">
             <a href="./index.html">
-                <img src="./assets/logo3attt.png" alt="LOGOPG">
+                <img src="./assets/logo3attt.png" alt="">
             </a>
         </div>
-
     </header>
 
+
+    <!--- Menu hamburguer-->
     <div class="inicio">
         <div class="menu-hamburguer" id="menuCaixa" style="margin-left: -40vh;">
             <div class="menu">
+
                 <div>
                     <img class="imagem-menu" src="assets/logo2.png" alt="">
                     <br>
                     <p>Seja Bem-Vindo(a),
-                       <div class="nome-banco" style="color: black;" id="div_usuario"></div>!</p>
+                    <div class="nome-banco" style="color: black;" id="div_usuario"></div>!</p>
                     <br><br><br><br><br>
-                    </div>
+                </div>
+
                 <br>
                 <br>
+
 
                 <div>
                     <a href="index.html#Inicio">Início</a>
@@ -57,22 +65,26 @@
             </div>
         </div>
 
+
+
         <div class="parte-dash">
-            <br>
-            <br>
-            <ul>
-                <li class="Dash" id="dash" style="margin-left: 50vh;">
-                    <canvas id="myChart"></canvas>
-                </li>
-            </ul>
             <div>
                 <br>
                 <ul>
                     <li class="Dash2" id="dash">
+                        <h1>Quiz 1</h1>
                         <canvas id="myChart2"></canvas>
                     </li>
+
                 </ul>
             </div>
+            <ul>
+                <li class="Dash" id="dash">
+                    <h1>Quiz 2</h1>
+                    <canvas id="myChart"></canvas>
+                </li>
+            </ul>
+
         </div>
 
 
@@ -85,6 +97,10 @@
 </html>
 
 <script>
+
+
+    // Menu indo e voltando
+
     div_usuario.innerHTML = sessionStorage.NOME_USUARIO
     function voltar() {
         var menu = document.getElementById('menuCaixa')
@@ -103,6 +119,8 @@
         }
     }
 
+
+    // plotando o grafico
 
     let proximaAtualizacao;
 
@@ -205,7 +223,7 @@
 
 
 
-/* 2 GRAFICO */
+    /* 2 GRAFICO */
 
 
     window.onload = obterDadosGrafico1(1);
@@ -233,7 +251,7 @@
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
     }
-    function plotarGrafico(resposta, idAquario) {
+    function plotarGrafico2(resposta, idAquario) {
         console.log('Iniciando plotagem do gráfico...');
 
         var dados = {
@@ -305,77 +323,77 @@
         });
     }
 
-    function plotarGrafico2(resposta, idAquario) {
-        console.log('Iniciando plotagem do gráfico...');
+    // function plotarGrafico2(resposta, idAquario) {
+    //     console.log('Iniciando plotagem do gráfico...');
 
-        var dados = {
-            labels: [],
-            datasets: [
-                {
-                    label: 'Média Acertos',
-                    backgroundColor: 'black',
-                    borderColor: '#06cdbc4f',
-                    borderWidth: 3,
-                    data: []
-                },
-                {
-                    label: 'Média Erros',
-                    backgroundColor: '#06cdbc4f',
-                    borderColor: 'black',
-                    borderWidth: 3,
-                    data: []
-                }
-            ]
-        };
+    //     var dados = {
+    //         labels: [],
+    //         datasets: [
+    //             {
+    //                 label: 'Média Acertos',
+    //                 backgroundColor: 'black',
+    //                 borderColor: '#06cdbc4f',
+    //                 borderWidth: 3,
+    //                 data: []
+    //             },
+    //             {
+    //                 label: 'Média Erros',
+    //                 backgroundColor: '#06cdbc4f',
+    //                 borderColor: 'black',
+    //                 borderWidth: 3,
+    //                 data: []
+    //             }
+    //         ]
+    //     };
 
-        for (var i = 0; i < resposta.length; i++) {
-            var registro = resposta[i];
-            dados.labels.push(registro.Nome);
-            dados.datasets[0].data.push(registro.Acertos);
-            dados.datasets[1].data.push(registro.Erros);
-        }
+    //     for (var i = 0; i < resposta.length; i++) {
+    //         var registro = resposta[i];
+    //         dados.labels.push(registro.Nome);
+    //         dados.datasets[0].data.push(registro.Acertos);
+    //         dados.datasets[1].data.push(registro.Erros);
+    //     }
 
-        var ctx2 = myChart.getContext('2d');
-        window.myChart2 = new Chart(ctx2, {
-            type: 'bar',
-            data: dados,
-            options: {
-                responsive: true,
-                animation: { duration: 900 },
-                hoverMode: 'index',
-                stacked: false,
-                plugins: {
-                    title: {
-                        display: true,
-                        font: {
-                            size: 20,
-                            family: 'Oswald, sans-serif'
-                        },
-                        color: 'rgb(0, 255, 0)'
-                    }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        grid: {
-                            color: 'black'
-                        }
-                    },
-                    x: {
-                        ticks: {
-                            color: 'black',
-                            font: {
-                                family: 'Oswald, sans-serif'
-                            }
-                        },
-                        grid: {
-                            color: 'black'
-                        }
-                    }
-                }
-            }
-        });
-    }
+    //     var ctx2 = myChart.getContext('2d');
+    //     window.myChart2 = new Chart(ctx2, {
+    //         type: 'bar',
+    //         data: dados,
+    //         options: {
+    //             responsive: true,
+    //             animation: { duration: 900 },
+    //             hoverMode: 'index',
+    //             stacked: false,
+    //             plugins: {
+    //                 title: {
+    //                     display: true,
+    //                     font: {
+    //                         size: 20,
+    //                         family: 'Oswald, sans-serif'
+    //                     },
+    //                     color: 'rgb(0, 255, 0)'
+    //                 }
+    //             },
+    //             scales: {
+    //                 y: {
+    //                     beginAtZero: true,
+    //                     grid: {
+    //                         color: 'black'
+    //                     }
+    //                 },
+    //                 x: {
+    //                     ticks: {
+    //                         color: 'black',
+    //                         font: {
+    //                             family: 'Oswald, sans-serif'
+    //                         }
+    //                     },
+    //                     grid: {
+    //                         color: 'black'
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     });
+    // }
 
 
 
