@@ -31,8 +31,6 @@ fkUsuario INT,
 
           SELECT nome, SUM(acertos), SUM(erros) FROM quiz JOIN usuario ON usuario.id = fkUsuario GROUP BY fkUsuario;
 
-      
-
           SELECT nome as Nome, ROUND(AVG(acertos), 0) AS Acertos, ROUND(AVG(erros), 0) AS Erros
 FROM quiz
 JOIN usuario ON usuario.id = fkUsuario

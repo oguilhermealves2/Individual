@@ -9,32 +9,33 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="js/funcoes.js"></script>
         <link rel="stylesheet" href="css/login.css">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <title>Login</title>
     </head>
 </head>
 
 <body>
 
-<!---Cabecario universal-->
+    <!---Cabecario universal-->
 
-<div class="container">
-    <header>
-      <div class="navbar-logo">
-        <img class="logo" src="assets/logo3attt.png" alt="" />
-      </div>
-      <nav class="navbar">
-        <a href="./index.html">Início</a>
-        <a href="./index.html#Sobre">Sobre</a>
-        <a href="./index.html#Curiosidades">Curiosidades</a>
-      </nav>
-      <div class="navbar-buttons">
-        <button onclick="login()" class="one">Entrar</button>
-        <button onclick="cadastro()" class="two">Cadastre-se</button>
-      </div>
-    </header>
-  </div>
+    <div class="container">
+        <header>
+            <div class="navbar-logo">
+                <img class="logo" src="assets/logo3attt.png" alt="" />
+            </div>
+            <nav class="navbar">
+                <a href="./index.html">Início</a>
+                <a href="./index.html#Sobre">Sobre</a>
+                <a href="./index.html#Curiosidades">Curiosidades</a>
+            </nav>
+            <div class="navbar-buttons">
+                <button onclick="login()" class="one">Entrar</button>
+                <button onclick="cadastro()" class="two">Cadastre-se</button>
+            </div>
+        </header>
+    </div>
 
-<!---Fim do cabecario-->
+    <!---Fim do cabecario-->
 
     <section class="login">
         <div class="caixa-login">
@@ -129,6 +130,16 @@
 
             if (resposta.ok) {
                 console.log(resposta);
+
+                Swal.fire({
+                    title: 'Realizado!',
+                    text: 'Login realizado com sucesso!',
+                    imageUrl: 'https://i.pinimg.com/originals/b4/fe/49/b4fe49ea829ecac4af2175fc12fa1fe4.gif',
+                    imageAlt: 'Custom image',
+                    imageWidth: 300,
+                    imageHeight: 200,
+                    timer: 3000,
+                });
 
                 resposta.json().then(json => {
                     console.log(json);
