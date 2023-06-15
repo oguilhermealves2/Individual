@@ -18,7 +18,7 @@
 
     <header class="header">
         <!--- fazendo o menu hamburguer ir e voltar-->
-        <div class="voltar" id="diminuir">
+        <div class="voltar" id="chamar">
             <a onclick="voltar()">
                 <img src="https://icon-library.com/images/mobile-menu-icon-png/mobile-menu-icon-png-16.jpg" alt=""
                     width="30px">
@@ -36,21 +36,16 @@
 
     <!--- Menu hamburguer-->
     <div class="inicio">
-        <div class="menu-hamburguer" id="menuCaixa" style="margin-left: -40vh;">
+        <div class="menu-hamburguer" id="menuCaixa">
             <div class="menu">
 
                 <div>
                     <img class="imagem-menu" src="assets/logo2.png" alt="">
                     <br>
                     <p>Seja Bem-Vindo(a),
-                    <div class="nome-banco" style="color: black;" id="div_usuario"></div>!</p>
+                    <div class="nome-banco" id="div_usuario"></div>!</p>
                     <br><br><br><br><br>
                 </div>
-
-                <br>
-                <br>
-
-
                 <div>
                     <a href="index.html#Inicio">Início</a>
                     <br><br>
@@ -64,10 +59,7 @@
                 </div>
             </div>
         </div>
-
-
-
-        <div class="parte-dash">
+        <div class="dashboard">
             <div>
                 <br>
                 <ul>
@@ -104,7 +96,7 @@
     div_usuario.innerHTML = sessionStorage.NOME_USUARIO
     function voltar() {
         var menu = document.getElementById('menuCaixa')
-        var margin = document.getElementById('diminuir')
+        var margin = document.getElementById('chamar')
 
 
         var respostaQ = document.getElementById('RespostaQ')

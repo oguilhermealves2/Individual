@@ -17,7 +17,7 @@
 
     <header class="header">
 
-        <div class="voltar" id="diminuir">
+        <div class="voltar" id="chamar">
             <a onclick="voltar()">
                 <img src="https://icon-library.com/images/mobile-menu-icon-png/mobile-menu-icon-png-16.jpg" alt=""
                     width="30px">
@@ -26,25 +26,22 @@
 
         <div class="logo">
             <a href="./index.html">
-                <img src="./assets/logo3attt.png" alt="LOGOPG">
+                <img src="./assets/logo3attt.png" alt="">
             </a>
         </div>
 
     </header>
 
     <div class="inicio">
-        <div class="menu-hamburguer" id="menuCaixa" style="margin-left: -40vh;">
+        <div class="menu-hamburguer" id="menuCaixa">
             <div class="menu">
                 <div>
                     <img class="imagem-menu" src="assets/logo2.png" alt="">
                     <br>
                     <p>Seja Bem-Vindo(a),
                     <div class="nome-banco" style="color: black;" id="div_usuario"></div>!</p>
-                    <br><br><br><br><br>
+                    <br><br><br><br>
                 </div>
-                <br>
-                <br>
-
                 <div>
                     <a href="index.html#Inicio">Início</a>
                     <br><br>
@@ -54,7 +51,7 @@
                     <br><br>
                     <a href="start.html">Quiz</a>
                     <br><br>
-                    <a href="comentarios.html">Comentarios</a>
+                    <a href="dashboard.html">Dashboard</a>
                 </div>
             </div>
         </div>
@@ -66,7 +63,7 @@
     <div class="modal">
         <div class="modal-conteudo">
             <span class="fechar">&times;</span>
-            <h2>Que tal deixar um comentário do que achou sobre o site?</h2>
+            <h2>Que tal deixar um comentário sobre o que achou do site?</h2>
             <p>Escreva o que gostaria de ver por aqui e o que mais gostou aqui!</p>
             <textarea name="" id="inputComentario" cols="30" rows="10"></textarea>
             <button class="botao-comentario" onclick="novoComentario()">Comentar</button>
@@ -86,7 +83,7 @@
     div_usuario.innerHTML = userName;
     function voltar() {
         var menu = document.getElementById('menuCaixa')
-        var margin = document.getElementById('diminuir')
+        var margin = document.getElementById('chamar')
 
 
         var respostaQ = document.getElementById('RespostaQ')
@@ -105,7 +102,7 @@
     let newData;
 
     fetch('/comentarios/listarComentarios')
-        .then(response => response.json())
+        .then(response => response.json()) // convertendo pra json
         .then(data => {
             if (data.length < 1) {
                 comentarios.innerHTML += `
@@ -118,7 +115,7 @@
             `
             }
             for (var i = 0; i < data.length; i++) {
-                newData = data[i];
+                newData = data[i]; // elementos do array data são atribuídos a variável newData
                 console.log(newData);
 
                 comentarios.innerHTML += `

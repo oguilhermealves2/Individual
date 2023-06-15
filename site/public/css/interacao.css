@@ -4,7 +4,7 @@
 
 body {
   font-family: arial;
-  font-size: 16px;
+  font-size: 12px;
   margin: 0;  
   background-color: #06cdbc4f;
   display: flex;
@@ -21,16 +21,15 @@ body {
   justify-content: center;
   text-align: center;
   align-items: center;
-  margin-top: 5vh;
+  margin-top: 4vh;
   background-color: #06cdbc1e;
   box-shadow: 3px 3px 3px 3px #00000061;
   border-radius: 5%;
- 
 }
 
 .texto-telinha h1 {
   font-weight: 300;
-  font-size: 25px;
+  font-size: 20px;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -54,7 +53,8 @@ header {
 }
 
 .logo {
-  width: 80%;
+  width: 60%;
+  margin-bottom: 9%;
 }
 
 /* Onde está a imagem da home */
@@ -75,7 +75,7 @@ header {
 }
 
 .logo-peixes img {
-  width: 130%;
+  width: 100%;
 }
 
 /*Fim da nav-bar */
@@ -87,7 +87,7 @@ header {
   background-color: #ffffff;
   box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.37);
   border-radius: 25px;
-  margin-top: 18vh;
+  margin-top: 10vh;
   
 }
 
@@ -100,6 +100,7 @@ header {
   margin: -20px -20px 20px;
   border-radius: 25px 25px 0 0;
   font-size: 20px;
+ 
 }
 
 .caixas_de_perguntas {

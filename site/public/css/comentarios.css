@@ -54,6 +54,7 @@
   align-items: center;
   text-align: center;
   overflow-x: hidden;
+  margin-left: -40vh;
 }
 
 .imagem-menu {
@@ -82,7 +83,7 @@ header {
 
 .logo {
   display: flex;
-  margin-right: 85vh;
+  margin-right: 95vh;
 }
 
 
@@ -214,3 +215,6 @@ nav ul {
   background-color: #056159;
 }
 
+.nome-banco {
+  color: black;
+}

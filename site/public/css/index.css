@@ -55,7 +55,7 @@ header {
 
 /*Buttons */
 .navbar-buttons {
-  width: 14%;
+  width: 18%;
   display: flex;
   justify-content: space-between;
 }
@@ -112,7 +112,7 @@ header {
 .textohome {
   position: absolute;
   top: 50%;
-  left: 18%;
+  left: 24%;
   transform: translate(-50%, -50%);
   justify-content: left;
 }
@@ -137,7 +137,7 @@ header {
   background-size: 100% 300vh;
   background-repeat: repeat-y;
   box-shadow: #06cdbca4 0px 150px 300px -15px inset;
-  height: 270vh;
+  height: 330vh;
   text-align: center;
   padding: 60px;
   position: relative;
@@ -197,9 +197,8 @@ header {
 }
 
 .textoeimg1 img {
-  width: 600px;
+  width: 550px;
   height: 100%;
-  margin-left: 180px;
 }
 
 /* 2 img e texto */
@@ -210,6 +209,7 @@ header {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
+  margin-top: 7vh;
 }
 
 .texto2 {
@@ -221,6 +221,7 @@ header {
   font-weight: 500;
   font-size: 25px;
   margin: 50px;
+  margin-top: 7vh;
 }
 
 /* 3 img e texto */
@@ -231,6 +232,7 @@ header {
   display: flex;
   flex-direction: row; /*Flexiona a pagina na direçao */
   align-items: flex-start;
+  margin-top: 7vh;
 }
 
 .texto3 {
@@ -242,10 +244,10 @@ header {
   font-weight: 500;
   font-size: 25px;
   justify-content: space-between;
+  margin-top: 7vh;
 }
 
 .textoeimg3 img {
-  margin-right: 7vh;
 }
 
 /* 4 img e texto */
@@ -256,6 +258,7 @@ header {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
+  margin-top: 20vh;
 }
 
 .texto4 {
@@ -267,6 +270,7 @@ header {
   font-weight: 500;
   font-size: 25px;
   margin: 50px;
+  margin-top: 7vh;
 }
 
 /* 5 img e texto */
@@ -289,10 +293,11 @@ header {
   font-weight: 500;
   font-size: 25px;
   justify-content: space-between;
+  margin-top: 30vh;
 }
 
 .textoeimg5 img {
-  margin-top: 2vh;
+  margin-top: 5vh;
   width: 300px;
   height: 90%;
 }
@@ -304,14 +309,14 @@ header {
   background-size: 100% 300vh;
   background-repeat: repeat-y;
   box-shadow: #06cdbc86 50px 250px 300px -15px inset;
-  height: 90vh;
+  height: 140vh;
   text-align: center;
   padding: 60px;
   position: relative;
 }
 
 .telasobre h1 {
-  margin-top: -5vh;
+  margin-top: -3vh;
   font-weight: 500;
   font-size: 50px;
   color: #ffffff;
@@ -326,7 +331,7 @@ header {
   justify-content: center;
   font-size: 25px;
   margin: 60px;
-  margin-top: 16vh;
+  margin-top: 39vh;
 }
 
 .textosobre p {
@@ -345,19 +350,17 @@ header {
   width: 80vh;
   height: 30vh;
   position: absolute;
-  right: -10vh;
-  top: 41.5vh;
-  z-index: -13;
+  right: 8vh;
+  margin-top: 24.3vh;
 }
 
 /*                         Footer                        */
+
 .footer {
   width: 100%;
-  height: 20vh;
+  height: 23vh;
   background-color: #06cdbc;
   box-shadow: #000000b0 0px 150px 300px -15px inset;
-  z-index: 999;
-  position: relative;
 }
 
 .footer h2 {

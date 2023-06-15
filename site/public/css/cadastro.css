@@ -33,94 +33,94 @@ body {
    }
    
    .logo {
-       width: 80%;
-   }
+    width: 60%;
+}
+
+/* Onde está a imagem da home */
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2.5%;
+}
+
+/*Inicio, sobre, curiosidades  */
+.navbar {
+    width: 33.3%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*Quase a mesma coisa, pórem cada palavra em especifico */
+.navbar a {
+    color: white;
+    font-weight: 700; /*  Peso da fonte (importada do google) */
+    font-size: 25px; /*Tamanho da fonte */
+    margin-bottom: 5.5%;
+}
+
+
+/*Buttons */
+.navbar-buttons {
+    width: 23%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-buttons::before {
+    width: 100%;
+    height: 0;
+    z-index: -1;
+    transition: 0.8s;
+}
+
+.one::before,.two::before {
+    top: 0;
+    border-radius: 50% 50% 50% 50%;
+}
+
+.one::before,.two::before {
+   height: 180%;
+}
+
+.one:hover::before,.two:hover::before {
+   height: 0;
+}
+
+/*Button "Entrar" */
+.one {
+    background-color: transparent;
+    border: 2px solid #000000;
+    border-radius: 8%; /*Borda */
+    height: 4vh;
+    width: 14vh;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+    transition: color 0.7s linear;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5%;
    
-   /* Onde está a imagem da home */
-   .navbar-logo {
-       display: flex;
-       align-items: center;
-   }
-   
-   /*Inicio, sobre, curiosidades  */
-   .navbar {
-       width: 33.3%;
-       display: flex;
-       justify-content: space-between;
-   }
-   
-   /*Quase a mesma coisa, pórem cada palavra em especifico */
-   .navbar a {
-       color: white;
-       font-weight: 700; /*  Peso da fonte (importada do google) */
-       font-size: 25px; /*Tamanho da fonte */
-   }
-   
-   
-   /*Buttons */
-   .navbar-buttons {
-       width: 14%;
-       display: flex;
-       justify-content: space-between;
-   }
-   
-   .navbar-buttons::before {
-       width: 100%;
-       height: 0;
-       z-index: -1;
-       transition: 0.8s;
-   }
-   
-   .one::before,.two::before {
-       top: 0;
-       border-radius: 50% 50% 50% 50%;
-   }
-   
-   .one::before,.two::before {
-      height: 180%;
-   }
-   
-   .one:hover::before,.two:hover::before {
-      height: 0;
-   }
-   
-   /*Button "Entrar" */
-   .one {
-       background-color: transparent;
-       border: 2px solid #000000;
-       border-radius: 8%; /*Borda */
-       height: 4vh;
-       width: 12vh;
-       font-weight: 700;
-       color: white;
-       cursor: pointer;
-       transition: color 0.7s linear;
-       margin-left: -7vh;
-       display: flex;
-       justify-content: center;
-       align-items: center;
-       margin-top: 0.5vh;
-      
-   }
-   
-   
-   /*Button "Cadastre-se" */
-   .two {
-       background-color: #000000;
-       cursor: pointer;
-       border: none;
-       border-radius: 8%;
-       height: 4vh;
-       width: 16vh;
-       font-weight: 700;
-       color: white;
-       margin-right: 3vh;
-       display: flex;
-       justify-content: center;
-       align-items: center;
-       margin-top: 0.5vh;
-     
-   }
+}
+
+
+/*Button "Cadastre-se" */
+.two {
+    background-color: #000000;
+    cursor: pointer;
+    border: none;
+    border-radius: 8%;
+    height: 4vh;
+    width: 24vh;
+    font-weight: 700;
+    color: white;
+    margin-right: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 14%;
+}
  
  
  /*Fim da nav-bar */
@@ -135,7 +135,7 @@ body {
 .caixa-login {
   width: auto;
   padding: 50px 60px 90px 60px;
-  height: 40vh;
+  height: 55vh;
   background-color: rgba(6, 205, 189, 0.79);
   background-repeat: no-repeat;
   background-position: bottom right;
@@ -147,14 +147,6 @@ body {
   position: relative;
   margin-top: -8vh;
 }
-
-/* .imagem-login {
-  width: 30vh;
-  height: 30vh;
-  position: absolute;
-  bottom: -20px;
-  right: 0;
-} */
 
 /* PARTE DA API */
 
@@ -187,15 +179,18 @@ body {
 
 .logoIMG {
   margin-bottom: 30px;
+  display: flex;
+
 }
 
 .inputs {
   width: 20vw;
   padding: 0 20px 0 0;
+  margin-bottom: -2%;
 }
 
 #genero {
-  width: 106%;
+  width: 109%;
   border-radius: 66px;
   border: 2px solid white;
   padding: 10px 10px;
